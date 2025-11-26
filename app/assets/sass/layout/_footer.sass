@@ -1,0 +1,90 @@
+@use '~/assets/sass/utilities/variables' as *
+@use '~/assets/sass/utilities/mixins' as *
+
+.footer
+  background: $clrPrimaryPressed
+  padding: 40px
+  width: 100%
+  color: #fff
+  position: relative
+  +r($lg)
+    padding: 20px 0
+  a
+    color: $clrGrey10
+  .copy
+    padding-top: 60px
+    text-align: center
+    font-size: 16px
+    font-weight: 400
+    color: $clrGrey50
+  .box-info-banner
+    margin-bottom: 60px
+  &-cols
+    display: flex
+    gap: 60px
+  &-col-info
+    display: flex
+    flex-direction: column
+    width: 100%
+    max-width: 300px
+    +r($lg)
+      display: none
+    
+    .text
+      font-weight: 400
+      margin-bottom: auto
+  &-nav
+    flex: 1 1 auto
+    display: flex
+    gap: 60px
+    font-size: 14px
+    +r($sm)
+      flex-direction: column
+      gap: 12px
+      //display: none
+    &__title
+      font-weight: bold
+      padding-bottom: 4px
+      margin-bottom: 6px
+      border-bottom: 1px solid $clrGrey70
+      display: flex
+      text-transform: uppercase
+      +r($sm)
+        font-size: 28px
+        text-transform: none
+        padding-bottom: 0
+    &__arr
+      display: none
+      margin-left: auto
+      +r($sm)
+        display: flex
+        align-items: center
+        justify-content: center
+    &__col
+      width: 33.333%
+      +r($sm)
+        width: 100%
+  .foot-menu
+    font-size: 18px
+    +r($sm)
+      overflow: hidden
+      max-height: 0
+      opacity: 0
+      visibility: hidden
+      transition: max-height .6s ease, opacity .6s ease, visibility 0s linear .3s
+
+      &.open
+        visibility: visible
+        max-height: 500px
+        opacity: 1
+        transition: max-height .6s ease, opacity .6s ease
+    &.open
+      display: block
+    li
+      display: block
+      &+li
+        padding-top: 6px
+      a
+        color: $clrGrey80
+        &:hover
+          color: $clrPrimaryMain

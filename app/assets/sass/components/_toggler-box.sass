@@ -1,0 +1,59 @@
+@use '~/assets/sass/utilities/variables' as *
+@use '~/assets/sass/utilities/mixins' as *
+
+.toggler-box
+  &.open
+    .arr
+      transform: rotate(180deg)
+  &__list
+    display: flex
+    flex-direction: column
+    gap: 24px
+  &__header
+    cursor: pointer
+    color: $clrPrimaryMain
+    font-size: 20px
+    font-weight: 500
+    padding: 8px 30px 8px 0
+    border-bottom: 2px solid $clrPrimaryMain
+    position: relative
+    user-select: none
+    .arr
+      position: absolute
+      top: 16px
+      right: 0
+      width: 16px
+      height: 16px
+  &__body
+    padding-top: 24px
+
+.--table-toggler
+  .toggler-box
+    &.open
+      .arr
+        transform: rotate(180deg)
+    &__list
+      display: flex
+      flex-direction: column
+      gap: 24px
+    &__header
+      cursor: pointer
+      color: inherit
+      font-size: 20px
+      font-weight: 500
+      border-bottom: none
+      position: relative
+      user-select: none
+      .box-info
+        display: flex
+        flex-direction: column
+        padding-top: 0
+        padding-bottom: 0
+        gap: 4px
+        +r($xss)
+          min-height: 45px
+      .arr
+        color: #13151A
+        top: 50%
+  &__body
+    padding-top: 8px

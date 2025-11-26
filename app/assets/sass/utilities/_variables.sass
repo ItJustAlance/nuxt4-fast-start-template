@@ -1,0 +1,577 @@
+// LAYOUT
+$xss: 400
+$xs: 480
+$smm: 560
+$sm: 700
+$md: 768
+$lg: 1023
+$xl: 1100
+$hd: 1460
+$ipath: "~@/assets/img"
+
+// FONTS
+$baseFont: 'Golos Text', sans-serif
+$font2: 'Monument Extended', sans-serif
+$systemFont: -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Ubuntu', 'Cantarell', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
+
+// COLORS
+$fontColor: #1D2533
+$fontColor50: rgba($fontColor, .5)
+
+/* Primary
+$clrPrimarySecond: #E5F6FF
+$clrPrimaryMain: #0096E0
+$clrPrimaryBorder: #BFEAFF
+$clrPrimaryHover: #217AA6
+$clrPrimaryFocus: #99DDFF
+$clrPrimaryPressed: #195E80
+
+/* Secondary
+$clrSecondarySecond: #FFE5EF
+$clrSecondaryMain: #E00051
+$clrSecondaryBorder: #FFBFD6
+$clrSecondaryHover: #A62151
+$clrSecondaryFocus: #FF99BE
+$clrSecondaryPressed: #80193E
+
+
+$clrGrey100: #000000
+$clrGrey90: #424242
+$clrGrey80: #595959
+$clrGrey70: #8C8C8C
+$clrGrey60: #BFBFBF
+$clrGrey50: #D9D9D9
+$clrGrey40: #F0F0F0
+$clrGrey30: #F4F4F5
+$clrGrey20: #FAFAFA
+$clrGrey10: #FFF
+
+
+$clrInfo20: #E4F2FF
+$clrInfo30: #BDDDFF
+$clrInfo50: #4BA1FF
+
+/* Error
+$clrErrorSecond: #FFE5E5
+$clrErrorMain: #FF0C0C
+$clrError50: #EB6F70
+$clrErrorBorder: #FFBFBF
+$clrErrorHover: #A62121
+$clrErrorFocus: #FF9999
+$clrErrorPressed: #801919
+
+
+/* Info
+$clrInfoMain: #0042ED
+$clrInfoSecondary: #E5EDFF
+$clrInfoBorder: #BFD1FF
+$clrInfoHover: #2146A6
+$clrInfoPressed: #193680
+$clrInfoFocus: #99B5FF
+
+/* Warning
+$clrWarningMain: #FFC107
+$clrWarningSecondary: #FFF9E5
+$clrWarningBorder: #FFEFBF
+$clrWarningHover: #A68521
+$clrWarningPressed: #806619
+$clrWarningFocus: #FFE599
+
+
+/* Success
+$clrSuccessMain: #27AF6E
+$clrSuccessSecondary: #E5FFF3
+$clrSuccessBorder: #BFFFE0
+$clrSuccessHover: #21A666
+$clrSuccessPressed: #19804E
+$clrSuccessFocus: #99FFCE
+
+/* Danger
+$clrDangerMain: #99000f
+$clrDangerSecondary: #f0e4e5
+$clrDangerBorder: #ddaaaf
+
+
+
+$clrYell: #FFD000
+$colorRed: #f45b63
+
+$borderColor: #e8e8e8
+$colorBg: #E5E5E5
+
+
+// OPTIONS
+$transitionSpeed: .25s
+$ease: ease-in-out
+
+// SOCIALS
+
+// BS GRID"titleTags
+$col1: 8.333333%
+$col2: 16.666667%
+$col3: 25%
+$col4: 33.333333%
+$col5: 41.666667%
+$col6: 50%
+$col7: 58.333333%
+$col8: 66.666667%
+$col9: 75%
+$col10: 83.333333%
+$col11: 91.666667%
+$col12: 100%
+
+$br: 6px
+$brSmall: 4px
+$brBig: 12px
+
+
+/*** THEME RED ***/
+
+/* Primary
+$clrPrimarySecond: #FEE5EA
+$clrPrimaryMain: #E51740
+$clrPrimaryBorder: #FFD4DC
+$clrPrimaryHover: #A10020
+$clrPrimaryFocus: #E51740
+$clrPrimaryFocusBorder: #FFB2C2
+$clrPrimaryPressed: #800019
+
+$clrMainModeMain: #E51740
+
+/* Secondary
+$clrSecondarySecond: #DEEDFF
+$clrSecondaryMain: #0C6BF2
+$clrSecondaryBorder: #C4DFFF
+$clrSecondaryHover: #0043BF
+$clrSecondaryFocus: #4C9AFF
+$clrSecondaryPressed: #003099
+
+/* Outline
+$clrOutlineSecond: #DEEDFF
+$clrOutlineMain: #E51740
+$clrOutlineBorder: #FFD4DC
+$clrOutlineHover: #A10020
+$clrOutlineFocus: #FFB2C2
+$clrOutlinePressed: #800019
+$clrOutlineDisable: #F5F6F7
+$clrOutlineDisableBorder: #BCC4CF
+
+/* Yellow
+$clrPrimaryYellow70: #FE9B0E
+$clrPrimaryYellow50: #FFC62B
+$clrPrimaryYellow40: #FFDD82
+$clrPrimaryYellow30: #FFEAB3
+$clrPrimaryYellow20: #FFF7E1
+
+$clrGrey100: #13151A
+$clrGrey90: #383D45
+$clrGrey80: #4B525C
+$clrGrey70: #717985
+$clrGrey60: #828C99
+$clrGrey50: #959EAB
+$clrGrey40: #BCC4CF
+$clrGrey30: #D1D8E0
+$clrGrey20: #F5F6F7
+$clrGrey10: #FFF
+
+$clrRed20: #FFEBEE
+$clrRed30: #FFCCD2
+$clrRed50: #EB6F70
+$clrRed70: #EC2D30
+
+$clrGreen20: #E5F5EC
+$clrGreen30: #BDDDFF
+$clrGreen40: #97D4B4
+$clrGreen50: #6BC497
+$clrGreen70: #0C9D61
+
+
+
+\:root
+  --qz-question-wrapper__background: rgba(255,255,255, 1)
+  --qz-question-wrapper__color: #292536
+  --inp-icon-border: #3478F6
+  --inp-ck-radio--text-color: #292536
+  --inp-ck-radio--wrapper_border_color: #292536
+  --inp-icon-color: #3478F6
+  --progress-box-bg-color: #000
+  --progress-box__circle-empty__stroke: rgba(216, 216, 216, .2)
+  --progress-box__circle-full__stroke: #3478F6
+  --progress-box__text-color: #292536
+  --main-aside__background: #fff
+  /* radio
+  --inp-icon-border--active: #3478F6
+  --inp-icon-color--active: #3478F6
+  --inp-ck-radio--text-color--active: #292536
+  --qz-question-wrapper__background--active: rgba(255,255,255, 1)
+  --inp-ck-radio--wrapper_border_color--active: #292536
+  /* Grey
+  --color-grey-10: #fff
+  --color-grey-20: #f5f5f5
+  --color-grey-30: #ededed
+  --color-grey-40: #e0e0e0
+  --color-grey-50: #c2c2c2
+  --color-grey-60: #9e9e9e
+  --color-grey-90: #424242
+  --color-grey-100: #0a0a0a
+  
+  /* Primary
+  --color-primary-main: #007db6
+  --color-primary-secondary: #daf3ff
+  --color-primary-border: #aadcf3
+  --color-primary-hover: #006898
+  --color-primary-focus: #80caed
+  --color-primary-pressed: #003e5b
+  
+  /* Info
+  --color-info-main: #0450bf
+  --color-info-secondary: #e8f0fa
+  --color-info-border: #81a7df
+  
+  /* Warning
+  --color-warning-main: #ffc107
+  --color-warning-secondary: #fff9e5
+  --color-warning-border: #ffeaac
+  
+  /* Success
+  --color-success-main: #12613c
+  --color-success-secondary: #e0f0e8
+  --color-success-border: #b0cabe
+  
+  /* Danger
+  --color-danger-main: #99000f
+  --color-danger-secondary: #f0e4e5
+  --color-danger-border: #ddaaaf
+
+
+/* PrimeVue */
+body.theme-red
+  /* PrimeVue Select: тема RED */
+  /* Root */
+  --p-select-background: #{$clrGrey10}
+  --p-select-disabled-background: #{$clrGrey20}
+  --p-select-filled-background: #{$clrGrey10}
+  --p-select-filled-hover-background: #{$clrGrey10}
+  --p-select-filled-focus-background: #{$clrGrey10}
+
+  --p-select-border-color: #{$clrGrey30}
+  --p-select-hover-border-color: #{$clrPrimaryHover}
+  --p-select-focus-border-color: #{$clrPrimaryMain}
+  --p-select-invalid-border-color: #{$clrRed30}
+
+  --p-select-color: #{$clrGrey70}
+  --p-select-disabled-color: #{$clrGrey50}
+  --p-select-placeholder-color: #{$clrGrey70}
+  --p-select-invalid-placeholder-color: #{$clrRed50}
+
+  --p-select-shadow: none
+  --p-select-padding-x: 12px
+  --p-select-padding-y: 10px
+  --p-select-border-radius: 24px
+
+  --p-select-focus-ring-width: 0px
+  --p-select-focus-ring-style: solid
+  --p-select-focus-ring-color: #{rgba($clrPrimaryMain, .35)}
+  --p-select-focus-ring-offset: 0px
+  --p-select-focus-ring-shadow: 0 0 0 2px #{rgba($clrPrimaryMain, .15)}
+
+  --p-select-transition-duration: .2s
+
+  /* Sizes */
+  --p-select-sm-font-size: 14px
+  --p-select-sm-padding-x: 10px
+  --p-select-sm-padding-y: 8px
+
+  --p-select-lg-font-size: 14px
+  --p-select-lg-padding-x: 14px
+  --p-select-lg-padding-y: 12px
+
+  /* Dropdown / Overlay */
+  --p-select-dropdown-width: 2.5rem
+  --p-select-dropdown-color: #{$clrGrey70}
+
+  --p-select-overlay-background: #{$clrGrey10}
+  --p-select-overlay-border-color: #{$clrGrey30}
+  --p-select-overlay-border-radius: 12px
+  --p-select-overlay-color: #{$clrGrey100}
+  --p-select-overlay-shadow: 0 8px 24px #{rgba($clrGrey100, .12)}
+
+  /* List */
+  --p-select-list-padding: 4px 0
+  --p-select-list-gap: 0
+  --p-select-list-header-padding: 8px 12px
+
+  /* Option */
+  --p-select-option-focus-background: #{rgba($clrPrimaryMain, .10)}
+  --p-select-option-selected-background: #{$clrPrimaryMain}
+  --p-select-option-selected-focus-background: #{$clrPrimaryMain}
+
+  --p-select-option-color: #{$clrGrey100}
+  --p-select-option-focus-color: #{$clrPrimaryMain}
+  --p-select-option-selected-color: #{$clrGrey10}
+  --p-select-option-selected-focus-color: #{$clrGrey10}
+
+  --p-select-option-padding: 8px 16px
+  --p-select-option-border-radius: 8px
+
+  /* Option group */
+  --p-select-option-group-background: #{$clrGrey10}
+  --p-select-option-group-color: #{$clrGrey70}
+  --p-select-option-group-font-weight: 600
+  --p-select-option-group-padding: 8px 16px
+
+  /* Icons & marks */
+  --p-select-clear-icon-color: #{$clrGrey70}
+  --p-select-checkmark-color: #{$clrGrey10}
+  --p-select-checkmark-gutter-start: 8px
+  --p-select-checkmark-gutter-end: 8px
+
+  /* Empty message */
+  --p-select-empty-message-padding: 8px 16px
+
+  // DatePicker Тема RED
+  --p-datepicker-transition-duration: .2s
+  --p-datepicker-panel-background: #{$clrGrey10}
+  --p-datepicker-panel-border-color: #{$clrGrey30}
+  --p-datepicker-panel-color: #{$clrGrey100}
+  --p-datepicker-panel-border-radius: 12px
+  --p-datepicker-panel-shadow: 0 8px 24px #{rgba($clrGrey100, .12)}
+  --p-datepicker-panel-padding: 8px
+
+  --p-datepicker-header-background: #{$clrGrey10}
+  --p-datepicker-header-border-color: #{$clrGrey30}
+  --p-datepicker-header-color: #{$clrGrey90}
+  --p-datepicker-header-padding: 8px 12px
+
+  --p-datepicker-title-gap: 8px
+  --p-datepicker-title-font-weight: 600
+
+  --p-datepicker-dropdown-width: 2.5rem
+  --p-datepicker-dropdown-sm-width: 2rem
+  --p-datepicker-dropdown-lg-width: 3rem
+  --p-datepicker-dropdown-border-color: #{$clrGrey30}
+  --p-datepicker-dropdown-hover-border-color: #{$clrGrey30}
+  --p-datepicker-dropdown-active-border-color: #{$clrGrey30}
+  --p-datepicker-dropdown-border-radius: 24px
+  --p-datepicker-dropdown-focus-ring-width: 0px
+  --p-datepicker-dropdown-focus-ring-style: solid
+  --p-datepicker-dropdown-focus-ring-color: #{rgba($clrPrimaryMain, .35)}
+  --p-datepicker-dropdown-focus-ring-offset: 0px
+  --p-datepicker-dropdown-focus-ring-shadow: 0 0 0 2px #{rgba($clrPrimaryMain, .15)}
+  --p-datepicker-dropdown-background: #{$clrGrey10}
+  --p-datepicker-dropdown-hover-background: #{$clrGrey10}
+  --p-datepicker-dropdown-active-background: #{$clrGrey10}
+  --p-datepicker-dropdown-color: #{$clrGrey100}
+  --p-datepicker-dropdown-hover-color: #{$clrPrimaryMain}
+  --p-datepicker-dropdown-active-color: #{$clrPrimaryMain}
+
+  --p-datepicker-input-icon-color: #{$clrGrey70}
+
+  --p-datepicker-select-month-hover-background: #{rgba($clrPrimaryMain, .10)}
+  --p-datepicker-select-month-color: #{$clrGrey100}
+  --p-datepicker-select-month-hover-color: #{$clrPrimaryMain}
+  --p-datepicker-select-month-padding: 6px 8px
+  --p-datepicker-select-month-border-radius: 8px
+
+  --p-datepicker-select-year-hover-background: #{rgba($clrPrimaryMain, .10)}
+  --p-datepicker-select-year-color: #{$clrGrey100}
+  --p-datepicker-select-year-hover-color: #{$clrPrimaryMain}
+  --p-datepicker-select-year-padding: 6px 8px
+  --p-datepicker-select-year-border-radius: 8px
+
+  --p-datepicker-group-border-color: #{$clrGrey30}
+  --p-datepicker-group-gap: 12px
+
+  --p-datepicker-day-view-margin: 8px 0 0
+  --p-datepicker-week-day-padding: 6px
+  --p-datepicker-week-day-font-weight: 600
+  --p-datepicker-week-day-color: #{$clrGrey70}
+
+  --p-datepicker-date-hover-background: #{rgba($clrPrimaryMain, .10)}
+  --p-datepicker-date-selected-background: #{$clrPrimaryMain}
+  --p-datepicker-date-range-selected-background: #{rgba($clrPrimaryMain, .12)}
+  --p-datepicker-date-color: #{$clrGrey100}
+  --p-datepicker-date-hover-color: #{$clrPrimaryMain}
+  --p-datepicker-date-selected-color: #{$clrGrey10}
+  --p-datepicker-date-range-selected-color: #{$clrGrey100}
+  --p-datepicker-date-width: 2.5rem
+  --p-datepicker-date-height: 2.5rem
+  --p-datepicker-date-border-radius: 8px
+  --p-datepicker-date-padding: 0
+  --p-datepicker-date-focus-ring-width: 0px
+  --p-datepicker-date-focus-ring-style: solid
+  --p-datepicker-date-focus-ring-color: #{rgba($clrPrimaryMain, .35)}
+  --p-datepicker-date-focus-ring-offset: 0px
+  --p-datepicker-date-focus-ring-shadow: 0 0 0 2px #{rgba($clrPrimaryMain, .15)}
+
+  --p-datepicker-month-view-margin: 8px 0 0
+  --p-datepicker-month-padding: 8px
+  --p-datepicker-month-border-radius: 8px
+
+  --p-datepicker-year-view-margin: 8px 0 0
+  --p-datepicker-year-padding: 8px
+  --p-datepicker-year-border-radius: 8px
+
+  --p-datepicker-buttonbar-padding: 8px 12px
+  --p-datepicker-buttonbar-border-color: #{$clrGrey30}
+
+  --p-datepicker-time-picker-padding: 8px 12px
+  --p-datepicker-time-picker-border-color: #{$clrGrey30}
+  --p-datepicker-time-picker-gap: 8px
+  --p-datepicker-time-picker-button-gap: 6px
+
+  --p-datepicker-today-background: #{$clrPrimarySecond}
+  --p-datepicker-today-color: #{$clrPrimaryMain}
+
+  // MultiSelect
+  --p-multiselect-background: #{$clrGrey10}
+  --p-multiselect-disabled-background: #{$clrGrey20}
+  --p-multiselect-filled-background: #{$clrGrey10}
+  --p-multiselect-filled-hover-background: #{$clrGrey10}
+  --p-multiselect-filled-focus-background: #{$clrGrey10}
+
+  --p-multiselect-border-color: #{$clrGrey30}
+  --p-multiselect-hover-border-color: #{$clrPrimaryHover}
+  --p-multiselect-focus-border-color: #{$clrPrimaryMain}
+  --p-multiselect-invalid-border-color: #{$clrRed30}
+
+  --p-multiselect-color: #{$clrGrey100}
+  --p-multiselect-disabled-color: #{$clrGrey50}
+  --p-multiselect-placeholder-color: #{$clrGrey70}
+  --p-multiselect-invalid-placeholder-color: #{$clrRed50}
+
+  --p-multiselect-shadow: none
+  --p-multiselect-padding-x: 12px
+  --p-multiselect-padding-y: 10px
+  --p-multiselect-border-radius: 24px
+
+  --p-multiselect-focus-ring-width: 0px
+  --p-multiselect-focus-ring-style: solid
+  --p-multiselect-focus-ring-color: #{rgba($clrPrimaryMain, .35)}
+  --p-multiselect-focus-ring-offset: 0px
+  --p-multiselect-focus-ring-shadow: 0 0 0 2px #{rgba($clrPrimaryMain, .15)}
+
+  --p-multiselect-transition-duration: .2s
+
+  --p-multiselect-sm-font-size: 14px
+  --p-multiselect-sm-padding-x: 10px
+  --p-multiselect-sm-padding-y: 8px
+
+  --p-multiselect-lg-font-size: 16px
+  --p-multiselect-lg-padding-x: 14px
+  --p-multiselect-lg-padding-y: 12px
+
+  --p-multiselect-dropdown-width: 2.5rem
+  --p-multiselect-dropdown-color: #{$clrGrey70}
+
+  --p-multiselect-overlay-background: #{$clrGrey10}
+  --p-multiselect-overlay-border-color: #{$clrGrey30}
+  --p-multiselect-overlay-border-radius: 12px
+  --p-multiselect-overlay-color: #{$clrGrey100}
+  --p-multiselect-overlay-shadow: 0 8px 24px #{rgba($clrGrey100, .12)}
+
+  --p-multiselect-list-padding: 4px 0
+  --p-multiselect-list-gap: 0
+  --p-multiselect-list-header-padding: 8px 12px
+
+  --p-multiselect-option-focus-background: #{rgba($clrPrimaryMain, .10)}
+  --p-multiselect-option-selected-background: #{$clrPrimaryMain}
+  --p-multiselect-option-selected-focus-background: #{$clrPrimaryHover}
+
+  --p-multiselect-option-color: #{$clrGrey100}
+  --p-multiselect-option-focus-color: #{$clrPrimaryMain}
+  --p-multiselect-option-selected-color: #{$clrGrey10}
+  --p-multiselect-option-selected-focus-color: #{$clrGrey10}
+
+  --p-multiselect-option-padding: 8px 16px
+  --p-multiselect-option-border-radius: 8px
+  --p-multiselect-option-gap: 8px
+
+  --p-multiselect-option-group-background: #{$clrGrey10}
+  --p-multiselect-option-group-color: #{$clrGrey70}
+  --p-multiselect-option-group-font-weight: 600
+  --p-multiselect-option-group-padding: 8px 16px
+
+  --p-multiselect-clear-icon-color: #{$clrGrey70}
+  --p-multiselect-chip-border-radius: 16px
+
+  --p-multiselect-empty-message-padding: 8px 16px
+  
+  // InputText
+  --p-inputtext-background: #{$clrGrey10}
+  --p-inputtext-disabled-background: #{$clrGrey20}
+  --p-inputtext-filled-background: #{$clrGrey10}
+  --p-inputtext-filled-hover-background: #{$clrGrey10}
+  --p-inputtext-filled-focus-background: #{$clrGrey10}
+
+  --p-inputtext-border-color: #{$clrGrey30}
+  --p-inputtext-hover-border-color: #{$clrPrimaryHover}
+  --p-inputtext-focus-border-color: #{$clrPrimaryMain}
+  --p-inputtext-invalid-border-color: #{$clrRed30}
+
+  --p-inputtext-color: #{$clrGrey100}
+  --p-inputtext-disabled-color: #{$clrGrey50}
+  --p-inputtext-placeholder-color: #{$clrGrey70}
+  --p-inputtext-invalid-placeholder-color: #{$clrRed50}
+
+  --p-inputtext-shadow: none
+  --p-inputtext-padding-x: 12px
+  --p-inputtext-padding-y: 10px
+  --p-inputtext-border-radius: 24px
+
+  --p-inputtext-focus-ring-width: 0px
+  --p-inputtext-focus-ring-style: solid
+  --p-inputtext-focus-ring-color: #{rgba($clrPrimaryMain, .35)}
+  --p-inputtext-focus-ring-offset: 0px
+  --p-inputtext-focus-ring-shadow: 0 0 0 2px #{rgba($clrPrimaryMain, .15)}
+
+  --p-inputtext-transition-duration: .2s
+
+  --p-inputtext-sm-font-size: 12px
+  --p-inputtext-sm-padding-x: 10px
+  --p-inputtext-sm-padding-y: 8px
+
+  --p-inputtext-lg-font-size: 14px
+  --p-inputtext-lg-padding-x: 14px
+  --p-inputtext-lg-padding-y: 12px
+
+  // TextArea
+  --p-textarea-background: #{$clrGrey10}
+  --p-textarea-disabled-background: #{$clrGrey20}
+  --p-textarea-filled-background: #{$clrGrey10}
+  --p-textarea-filled-hover-background: #{$clrGrey10}
+  --p-textarea-filled-focus-background: #{$clrGrey10}
+
+  --p-textarea-border-color: #{$clrGrey30}
+  --p-textarea-hover-border-color: #{$clrPrimaryHover}
+  --p-textarea-focus-border-color: #{$clrPrimaryMain}
+  --p-textarea-invalid-border-color: #{$clrRed30}
+
+  --p-textarea-color: #{$clrGrey100}
+  --p-textarea-disabled-color: #{$clrGrey50}
+  --p-textarea-placeholder-color: #{$clrGrey70}
+  --p-textarea-invalid-placeholder-color: #{$clrRed50}
+
+  --p-textarea-shadow: none
+  --p-textarea-padding-x: 12px
+  --p-textarea-padding-y: 10px
+  --p-textarea-border-radius: 24px
+
+  --p-textarea-focus-ring-width: 0px
+  --p-textarea-focus-ring-style: solid
+  --p-textarea-focus-ring-color: #{rgba($clrPrimaryMain, .35)}
+  --p-textarea-focus-ring-offset: 0px
+  --p-textarea-focus-ring-shadow: 0 0 0 2px #{rgba($clrPrimaryMain, .15)}
+
+  --p-textarea-transition-duration: .2s
+
+  --p-textarea-sm-font-size: 14px
+  --p-textarea-sm-padding-x: 10px
+  --p-textarea-sm-padding-y: 8px
+
+  --p-textarea-lg-font-size: 16px
+  --p-textarea-lg-padding-x: 14px
+  --p-textarea-lg-padding-y: 12px
+
+.table-cm__filters
+  --p-select-padding-y: 6px

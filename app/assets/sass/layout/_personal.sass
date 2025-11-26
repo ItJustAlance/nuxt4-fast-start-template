@@ -1,0 +1,74 @@
+@use '~/assets/sass/utilities/variables' as *
+@use '~/assets/sass/utilities/mixins' as *
+.personal-layout
+  display: flex
+  padding: 32px 24px
+  border-top: 1px solid $clrGrey30
+  width: 100%
+  font-family: $baseFont
+  +r($sm)
+    padding: 16px
+.main-personal
+  display: flex
+  flex: 1 1 auto
+  min-width: 0
+  &__wrapper
+    width: 100%
+    max-width: 1360px
+  .tabs-box
+    +r($md)
+      margin: 0
+  .main-header
+    padding-bottom: 12px
+    color: $clrGrey90
+    margin-bottom: 28px
+    +r($md)
+      .svg-icon.ic24
+        width: 16px
+        height: 16px
+      .svg-icon.nosize
+        width: 24px
+        height: 24px
+    &__left
+      padding-bottom: 4px
+      display: flex
+      align-items: center
+      gap: 16px
+      &--sb
+        justify-content: space-between
+      +r($md)
+        flex-wrap: wrap
+    &__right
+      margin-left: auto
+      +r($md)
+        margin-left: 0
+    .h1
+      padding-top: 0
+      margin: 0
+      display: inline-flex
+      font-weight: 500
+      +r($sm)
+        font-size: 20px
+    .subtitle
+      font-size: 14px
+      color: $clrGrey70
+    &__personal-submenu
+      margin-top: 24px
+      display: none
+      +r($lg)
+        display: block
+
+.over
+  .main-personal
+    &__crumbs
+      .p-breadcrumb
+        font-size: 14px
+        padding-bottom: 12px
+      .p-breadcrumb-item-link, .p-breadcrumb-separator
+        font-weight: 300
+        font-size: 14px
+    .link-back
+      margin-top: 3px
+      svg
+        fill: $clrGrey90   
+        stroke: none

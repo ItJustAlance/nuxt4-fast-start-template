@@ -1,0 +1,112 @@
+@use '~/assets/sass/utilities/variables' as *
+@use '~/assets/sass/utilities/mixins' as *
+
+
+    
+.group-list-box
+  display: flex
+  flex-direction: column
+  gap: 12px
+  &__legends
+    display: flex
+    font-size: 14px
+    +r($md)
+      flex-wrap: wrap-reverse
+      gap: 12px
+    &-checker
+      +r($md)
+        width: 100%
+      .box-checkbox
+        display: flex
+        align-items: center
+    &-right
+      margin-left: auto
+      display: flex
+      gap: 12px
+      +r($md)
+        margin: 0
+        flex-wrap: wrap
+    .legend-item
+      display: flex
+      align-items: center
+      color: $clrGrey80
+      font-size: 12px
+      gap: 4px
+      .color-box
+        min-width: 16px
+        max-width: 16px
+        height: 16px
+        border-radius: 2px
+        background: $clrPrimaryYellow40
+        &.--green
+          background: $clrGreen40
+        &.--gray
+          background: $clrGrey40
+  &__list
+    display: flex
+    flex-wrap: wrap
+    margin: 0 -4px
+    gap: 4px 0
+  &__item
+    display: flex
+    min-width: 16.666%
+    max-width: 16.666%
+    padding: 0 4px
+    +r($lg)
+      min-width: 20%
+      max-width: 20%
+    +r($sm)
+      min-width: 50%
+      max-width: 50%
+    +r($xs)
+      min-width: 100%
+      max-width: 100%
+    &.--gray
+      .group-list-box__item__header
+        color: $clrGrey50
+        border-color: $clrGrey30
+        background: $clrGrey20
+    &.--green
+      .group-list-box__item__header
+        color: $clrGreen50
+        border-color: $clrGreen30
+        background: $clrGreen20
+    &-wrapper
+      display: flex
+      flex-direction: column
+      border-radius: 4px
+      border: 1px solid $clrGrey50
+      width: 100%
+    &__header
+      display: flex
+      border-bottom: 1px solid $clrPrimaryYellow30
+      border-radius: 4px 4px 0 0
+      background: $clrPrimaryYellow20
+      color: $clrPrimaryYellow50
+      padding: 2px 8px
+      margin-bottom: 3px
+      font-size: 12px
+      .num-right
+        margin-left: auto
+    &__body
+      text-align: center
+      font-size: 12px
+      color: $clrGrey80
+      display: flex
+      flex-direction: column
+      gap: 4px
+    .b-link
+      text-decoration: none
+      color: $clrSecondaryMain
+      padding: 4px
+      display: inline-block
+      vertical-align: top
+  &__footer
+    display: flex
+    +r($xs)
+      flex-wrap: wrap
+      justify-content: center
+    .b-right
+      margin-left: auto
+      +r($xs)
+        margin: 0 auto

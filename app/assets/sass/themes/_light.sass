@@ -1,0 +1,31 @@
+@use '~/assets/sass/utilities/variables' as *
+@use '~/assets/sass/utilities/mixins' as *
+
+.theme-light
+  .aside
+    background: $clrGrey20
+  .main-header
+    background: $clrGrey20
+    +r($lg)
+      background: #fff
+    .h1
+      color: $clrGrey100
+  .footer
+    background: $clrGrey20
+
+    
+.theme-red
+  .search-form
+    &__input
+      background: #eff9ff url(/img/red/magnifying-glass.svg) no-repeat 16px 50%
+  .box-info-banner 
+    .b-text
+      color: $clrGrey80
+  .footer
+    background: $clrGrey20
+    color: $clrGrey80
+
+    &-nav
+      &__title
+        color: $clrPrimaryMain
+    

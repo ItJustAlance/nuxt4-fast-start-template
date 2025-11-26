@@ -1,0 +1,124 @@
+@use '~/assets/sass/utilities/variables' as *
+@use '~/assets/sass/utilities/mixins' as *
+
+// titles
+.h1-title
+  font-size: 64px
+  font-weight: 500
+  line-height: 1
+  +r($xl)
+    font-size: 52px
+  +r($lg)
+    font-size: 48px
+  +r($xss)
+    font-size: 42px
+  //letter-spacing: em(-1.22, 72)
+
+.h2-title
+  font-size: 48px
+  font-weight: 500
+  line-height: 1.2
+  +r($xl)
+    font-size: 42px
+  +r($lg)
+    font-size: 36px
+  +r($md)
+    font-size: 28px
+.h3-title
+  font-size: 36px
+  font-weight: 500
+
+.h4-title
+  font-size: 28px
+  font-weight: 500
+  padding-bottom: 32px
+  
+.h5-title
+  font-size: 20px
+  font-weight: 500
+
+// paragraphs
+.p-main
+  font-size: 18px
+
+.p-main
+  margin: 0
+
+p + p, ol + p, p + ol, ul + p, p + ul
+  margin-top: 16px
+
+
++r($lg)
+  .h1-title
+    font-size: 46px
+
++r($sm)
+  .h1-title
+    font-size: 36px
+
+
+// little inline helpers
+.f-400
+  font-weight: normal
+
+.f-500
+  font-weight: 500
+
+.f-600
+  font-weight: 600
+
+.f-700
+  font-weight: 700
+
+.f-900
+  font-weight: 900
+
+// color modifiers
+.c-red
+  color: $colorRed
+
+ol
+  margin-left: 45px
+  +r($sm)
+    margin-left: 30px
+  li
+    & + li
+      margin-top: 16px
+      
+.article
+  font-size: 18px
+  h1
+    font-size: 36px
+    padding: 15px 0
+  h2
+    font-size: 28px
+    padding: 15px 0 5px
+  h3
+    font-size: 24px
+    padding: 15px 0 5px
+  h4
+    font-size: 18px
+    padding: 15px 0 0
+    
+  ol
+    margin-left: 20px
+  ul
+    margin-left: 0
+    +r($sm)
+      margin-left: 30px
+    li
+      position: relative
+      padding-left: 15px
+      display: block
+      &:after
+        content: ""
+        width: 10px
+        height: 2px
+        background: #000
+        position: absolute
+        top: 12px
+        left: 0
+
+      & + li
+        margin-top: 16px
+ 

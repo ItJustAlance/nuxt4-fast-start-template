@@ -1,0 +1,501 @@
+@use '~/assets/sass/utilities/variables' as *
+@use '~/assets/sass/utilities/mixins' as *
+
+.page-main .over
+  
+  .header
+    background: none
+  .main
+    padding-bottom: 0
+    
+.lvl1
+  margin-bottom: 120px
+  position: relative
+  min-height: 50dvh
+  display: flex
+  +r($lg)
+    margin-bottom: 80px
+    
+  +r($xss)
+    margin-bottom: 24px
+    
+  &:before
+    content: ""
+    position: absolute
+    bottom: 0
+    left: calc(50% - 1000px)
+    top: -200px
+    display: block
+    width: 2000px
+    background: url(/img/red/gradient-main.jpg) 50% 0 no-repeat
+    background-size: cover
+  .all
+    position: relative
+    display: flex
+    
+  &-img
+    flex: 0 0 370px
+    margin-right: 20px
+    display: flex
+    +r($lg)
+      display: none
+    .img-main
+      margin-top: auto
+      position: relative
+      width: 100%
+      
+      &__img
+        max-width: 400px
+        margin-left: -30px
+        @media(max-width: 1100px)
+          margin-left: 5px
+        &__img.--auth
+          max-width: 400px
+          margin-left: -100px
+          @media(max-width: 1400px)
+            margin-left: -75px
+          @media(max-width: 1100px)
+            margin-left: -25px
+      &__text
+        position: absolute
+        bottom: 20px
+        left: 40px
+        background: #fff
+        border-radius: 20px
+        padding: 12px
+        font-size: 14px
+        font-weight: 300
+        color: #000
+        max-width: 255px
+        @media(max-width: 1100px)
+          left: 0
+        .title
+          font-size: 18px
+          font-weight: 700
+          color: $clrPrimaryMain
+          padding-bottom: 12px
+      
+  &-content
+    position: relative
+    z-index: 1
+    padding-bottom: 70px
+    +r($lg)
+      padding-bottom: 50px
+    +r($xss)
+      padding-bottom: 24px
+    .search-box  
+      &__tags
+        margin-right: -100px
+        +r($lg)
+          margin: 0
+    .lvl-title
+      padding-bottom: 20px
+      +r($xss)
+        padding-bottom: 24px
+        
+    .boxinfo .curse-item__link.tag-active
+      padding: 10px 24px
+      
+  .h1-title
+    margin: 0
+    padding: 0 0 10px
+    font-size: 48px
+    font-weight: 500
+    span
+      color: #E51740
+    +r($xl)
+      font-size: 42px
+      text-align: center
+      line-height: 1.3
+    +r($lg)
+      font-size: 38px
+    +r($xl)
+      font-size: 48px
+
+  
+  
+        
+.lvl2
+  padding-bottom: 120px
+  +r($lg)
+    padding-bottom: 80px
+  +r($xss)
+    padding-bottom: 24px
+  
+  // .boxinfo-list
+    display: flex
+    flex-wrap: wrap
+    .curse-list
+      position: relative
+      z-index: 1
+    .boxinfo
+      padding: 10px
+    .box-1
+      min-width: 50%
+      max-width: 50%
+      +r($lg)
+        min-width: 100%
+        max-width: 100%
+      .boxinfo-img
+        top: 0
+        margin-top: -20px
+        margin-bottom: -32px
+        +r($sm)
+          margin: 0 0 64px
+    // .boxs-mini
+      min-width: 50%
+      max-width: 50%
+      display: flex
+      flex-direction: column
+      +r($lg)
+        min-width: 100%
+        max-width: 100%
+      .boxinfo
+        flex: 1 1 auto
+        display: flex
+        &-wrapper
+          display: flex
+          +r($sm)
+            flex-direction: column
+        .title
+          flex: 1 1 auto
+          font-size: 28px
+          padding-bottom: 0
+          display: flex
+          align-items: flex-end
+          +r($sm)
+            order: 1
+            justify-content: center
+            margin: 0
+            
+      .boxinfo-img
+        position: absolute
+        bottom: 0
+        right: 0
+        margin: 0
+        top: auto
+        +r($sm)
+          position: relative
+          top: 0
+          text-align: center
+          order: 0
+          margin-bottom: 64px
+
+.lvl3
+  padding-bottom: 120px
+  +r($lg)
+    padding-bottom: 80px
+  +r($xss)
+    padding-bottom: 24px
+  
+.lvl4
+  +r($lg)
+    padding-bottom: 80px
+  +r($xss)
+    padding-bottom: 24px
+  .main-title
+    padding-bottom: 48px
+    +r($lg)
+      padding-bottom: 24px
+
+.popular
+  &-list
+    display: flex
+    flex-wrap: wrap
+    margin: -20px -10px 0px
+    
+  &-item
+    max-width: 50%
+    min-width: 50%
+    padding: 20px 10px
+    display: flex
+    +r($md)
+      max-width: 100%
+      min-width: 100%
+      padding: 12px 10px
+    &.--disabled
+      opacity: .9
+      color: $clrGrey50
+      .mini-info, .small-label
+        filter: grayscale(1)
+        svg
+          opacity: .5
+      .text, .title, .small-label, .mini-info
+        color: $clrGrey50
+      .img img
+        filter: grayscale(1)
+        opacity: .4
+      .popular-item-wrapper
+        background: $clrGrey30
+        border-color: $clrGrey30
+        &:before
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          z-index: 1
+          background: rgba(134, 134, 134, 0)
+    &-wrapper
+      border: 1px solid $clrPrimaryBorder
+      padding: 24px
+      border-radius: 24px
+      position: relative
+      display: flex
+      flex-direction: column
+      
+    &__header
+      display: flex
+      
+      .right
+        flex: 1 1 auto
+    &__bottom
+      display: block
+      &-link
+        display: block
+        color: $clrGrey100
+        &:hover
+          .text
+            color: $clrPrimaryHover
+    &__content
+      padding-top: 46px
+      margin-top: auto
+      +r($md)
+        padding-top: 24px
+    .img
+      min-width: 100px
+      max-width: 100px
+      margin-right: 24px
+      +r($md)
+        min-width: 60px
+        max-width: 60px
+        margin-right: 18px
+    .title
+      font-size: 20px
+      font-weight: 500
+      display: block
+      +r($md)
+        display: -webkit-box
+        -webkit-line-clamp: 3
+        -webkit-box-orient: vertical
+        overflow: hidden
+        text-overflow: ellipsis
+        max-height: 81px
+      +r($xss)
+        font-size: 18px
+    .text
+      font-size: 18px
+      color: #8C8C8C
+      font-weight: 400
+      +r($xss)
+        font-size: 16px
+    .info-list
+      margin: 0
+      padding: 0
+      list-style: none
+      display: block
+      +r($md)
+        margin-right: -12px
+      li
+        display: inline-flex
+        vertical-align: top
+        margin: 0 12px 12px 0
+      
+    .small-label
+      display: inline-flex
+      vertical-align: top
+      color: $clrGrey70
+      font-weight: 400
+      font-size: 14px
+      &-list
+        display: flex
+        flex-wrap: wrap
+        gap: 32px
+      &__icon
+        margin-right: 8px
+        display: flex
+        align-items: center
+    .course-panel
+      padding-top: 12px
+      display: flex
+      flex-direction: column
+      gap: 12px
+      &-payment
+        display: flex
+      &-bottom
+        display: flex
+        .btn
+          margin-right: auto
+          & + .btn
+            margin-right: 0
+      &-pay
+        display: flex
+        margin-bottom: 12px
+      .--btn-favorite
+        stroke: currentColor
+        color: $clrPrimaryMain
+      
+        &:hover
+          color: #fff
+          background: $clrPrimaryHover
+      .svg-icon--heart-straight
+        svg
+          stroke: currentColor
+      .btn.--active
+        .svg-icon--heart-straight
+          svg
+            fill: $clrPrimaryMain
+
+            
+            
+            
+            
+.main-section
+  margin-bottom: 120px
+  &__header
+    display: flex
+    padding-bottom: 36px
+    .main-title
+      max-width: 50%
+      margin-bottom: 12px
+    .right-col
+      margin-left: auto
+      padding-top: 10px
+      margin-bottom: 12px
+    .main-title__link
+      padding: 12px 0
+      display: inline-flex
+      font-weight: 700
+      +r($xs)
+        text-align: right
+  .h2-title
+    font-weight: 500
+    
+.main-organisation     
+  &-list
+    display: flex
+    justify-content: space-between
+    gap: 12px
+    overflow-x: auto
+    scrollbar-width: none
+    -ms-overflow-style: none
+    overscroll-behavior: none
+    -webkit-overflow-scrolling: auto
+    scroll-behavior: smooth
+    scroll-snap-type: x proximity
+    &::-webkit-scrollbar
+      display: none
+      
+    
+  &__item
+    display: flex
+    align-items: center
+    justify-content: center
+    img
+      max-width: 100px
+      
+.main-info-image
+  &-menu 
+    display: flex
+    margin: 0 -10px
+    scrollbar-width: none
+    -ms-overflow-style: none
+    overscroll-behavior: none
+    +r($md)
+      overflow-x: auto
+      scroll-behavior: smooth
+      scroll-snap-type: x proximity
+      -webkit-overflow-scrolling: touch
+    &::-webkit-scrollbar
+      display: none
+  &__item
+    flex: 0 0 33.333%
+    padding: 0 10px
+    text-align: center
+    display: flex
+    &.--news
+      .main-info-image__item__wrapper
+        background: url(/img/red/news-bg.jpg) #0C6BF2 50% 0 no-repeat
+        background-size: cover
+      .title-link
+        color: #fff
+        &__ic
+          color: #fff
+          .svg-icon--ic-arrow-circle-right
+            color: #fff
+            .path-fill
+              fill: #fff
+    &__wrapper
+      display: flex
+      flex-direction: column
+      width: 100%
+      border-radius: 24px
+      background: $clrGrey20
+      min-height: 290px
+      padding: 24px 24px 32px
+      transform: scale(1)
+      &:hover
+        transform: scale(1.02)
+    .img 
+      text-align: center
+      img 
+        max-height: 150px
+    .b-bottom
+      text-align: center
+      margin: auto 0 0
+      padding-top: 24px
+    .title-link
+      font-size: 28px
+      font-weight: 500
+      display: inline-flex
+      align-items: center
+      gap: 8px
+      color: $clrGrey100
+      &__ic
+        display: flex
+        align-items: center
+        margin-top: 2px
+        color: #E51740
+        .path-fill
+          fill: #E51740
+.slider-big
+  position: relative
+  &-wrapper
+    position: relative
+    +r($md)
+      padding-bottom: 50px
+    .indicator
+      display: none
+      font-size: 16px
+      font-weight: bold
+      color: $clrGrey60
+      text-align: center
+      position: absolute
+      bottom: 8px
+      left: 0
+      width: 100%
+      strong
+        color: $clrGrey100
+      +r($md)
+        display: block
+    .banner-big
+      text-align: center
+  .arr-left
+    transform: rotate(180deg)
+  +r($md)
+    .p-carousel-prev-button
+      position: absolute
+      top: calc(100% + 12px)
+      left: calc(50% - 100px)
+      z-index: 2
+      
+    .p-carousel-next-button
+      position: absolute
+      top: calc(100% + 12px)
+      right: calc(50% - 100px)
+      z-index: 2
+
+      
+      
+      

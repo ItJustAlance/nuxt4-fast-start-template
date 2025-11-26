@@ -1,0 +1,412 @@
+@use '~/assets/sass/utilities/variables' as *
+@use '~/assets/sass/utilities/mixins' as *
+
+a
+  color: $clrPrimaryMain
+  text-decoration: none
+  transition: all 0.3s ease
+
+  &:hover, &:focus
+    text-decoration: none
+    color: $clrPrimaryHover
+
+
+// buttons
+button
+  -webkit-appearance: none
+  border: 0
+  box-shadow: none
+  cursor: pointer
+  background: none
+
+  &:focus
+    outline: none
+
+.btn
+  display: inline-flex
+  position: relative
+  align-items: center
+  justify-content: center
+  text-align: center
+  cursor: pointer
+  transition: all $transitionSpeed $ease
+  color: $clrGrey10
+  background: $clrPrimaryMain
+  border-radius: 100px
+  padding: 12px 32px
+  font-weight: 700
+  border: 1px solid transparent
+
+  &--onlyicon
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 100px
+
+  +r($xl)
+    padding: 12px 16px
+  +r($xss)
+    padding: 12px
+    width: 100%
+
+  .btn-label
+    display: inline-flex
+    align-items: center
+    &--blue
+      font-weight: 400
+      color: $clrSecondaryMain
+    &--red
+      font-weight: 400
+      color: $clrRed50
+    &--green
+      font-weight: 400
+      color: $clrGreen50
+
+  .btn-label + .svg-icon
+    margin: -10px 0 -10px 10px
+
+  .svg-icon
+    margin-top: 0
+    //fill: currentColor
+    & + .btn-label
+      margin-left: 4px
+      text-align: left
+      +r($lg)
+        margin-right: 4px
+
+  &:hover
+    background: $clrPrimaryHover
+    color: #fff
+    border-color: $clrPrimaryHover
+
+  &.--disabled, &:disabled
+    color: $clrGrey40 !important
+    background: $clrGrey20 !important
+    border-color: $clrGrey20 !important
+    cursor: default
+    
+  &:disabled.btn--disabled-success
+    color: $clrGreen20 !important
+    background: $clrGreen40 !important
+    border-color: $clrGreen40 !important
+    
+  & + .btn, & + .button-modal
+    margin-left: 16px
+
+  &--form
+    font-size: 14px
+    font-weight: 400
+    padding: 8px 16px
+    border-radius: 24px
+    color: $clrGrey90
+    background: $clrGrey10
+    border-color: $clrGrey50
+
+  &--second
+    color: $clrPrimaryMain
+    background: $clrPrimarySecond
+    border-color: $clrPrimarySecond
+
+    &:hover
+      color: $clrPrimaryHover
+      background: $clrPrimarySecond
+
+  &--red-second
+    color: $clrPrimaryMain
+    background: #fff
+    border-color: $clrPrimaryMain
+
+    &:hover
+      color: #fff
+      background: $clrPrimaryHover
+
+  &--white
+    color: $clrGrey90
+    background: $clrGrey10
+    border-color: $clrGrey10
+
+    &:hover
+      color: $clrGrey10
+      background: $clrPrimaryMain
+      border-color: $clrPrimaryMain
+
+  &--white2
+    color: $clrGrey90
+    background: $clrGrey10
+    border-color: $clrGrey50
+
+    &:hover
+      color: $clrGrey10
+      background: $clrPrimaryMain
+      border-color: $clrPrimaryMain
+
+  &--outline
+    color: $clrOutlineMain
+    background: #FFFFFF
+    border: 1px solid $clrOutlineBorder
+
+    &:hover
+      color: $clrOutlineHover
+      background: #FFFFFF
+      border: 1px solid $clrOutlineHover
+
+    &:focus
+      color: $clrOutlineMain
+      background: #FFFFFF
+      border: 1px solid $clrOutlineFocus
+
+  &--gray
+    border-color: $clrPrimaryMain
+    color: $clrPrimaryMain
+    background: $clrGrey20
+
+    &:hover
+      color: $clrGrey10
+      background: $clrPrimaryHover
+      border-color: $clrPrimaryHover
+
+
+  &--border
+    border-color: $clrPrimaryBorder
+    color: $clrPrimaryMain
+    background: #ffffff
+
+    &:hover
+      color: $clrPrimaryHover
+      background: #fff
+      border-color: $clrPrimaryHover
+
+    &--weight-400
+      font-weight: 400
+
+  &--border-inline
+    border-color: $clrPrimaryBorder
+    color: $clrPrimaryMain
+    background: none
+
+    &:hover
+      color: $clrPrimaryHover
+      background: #fff
+      border-color: $clrPrimaryHover
+
+  &--inline
+    border-color: rgba(255, 255, 255, 0)
+    background: none
+    color: $clrPrimaryMain
+    padding-left: 16px
+    padding-right: 16px
+
+    &:hover
+      background: none
+      border-color: rgba(255, 255, 255, 0)
+      color: $clrPrimaryHover
+
+    &.--disabled, &--disabled, &[disabled]
+      color: $clrGrey50 !important
+      background: none !important
+      border: none !important
+
+  &--mobile
+    margin: 0 !important
+    border-color: rgba(255, 255, 255, 0)
+    background: none
+    color: $clrPrimaryMain
+
+    &:hover
+      background: none
+      border-color: rgba(255, 255, 255, 0)
+      color: $clrPrimaryHover
+
+  &--link
+    border-color: rgba(255, 255, 255, 0)
+    background: none
+    color: $clrPrimaryMain
+    padding-left: 0
+    padding-right: 0
+
+    &:hover
+      background: none
+      border-color: rgba(255, 255, 255, 0)
+      color: $clrPrimaryHover
+
+    &.--disabled, &--disabled, &[disabled]
+      color: $clrGrey50 !important
+      background: none !important
+      border: none !important
+
+  &.--size2
+    padding-left: 16px
+    padding-right: 16px
+
+  &.px-0
+    padding-left: 0
+    padding-right: 0
+
+  &.--disabled, &--disabled
+    background: $clrGrey20 !important
+    color: $clrGrey50 !important
+    border-color: $clrGrey20 !important
+    cursor: default
+
+  &--warning-second
+    color: $clrWarningMain
+    background: $clrWarningSecondary
+    border-color: $clrWarningSecondary
+
+    &:hover
+      color: $clrWarningHover
+      background: $clrWarningMain
+
+  &--warning
+    color: #fff
+    background: $clrWarningMain
+    border-color: $clrWarningMain
+
+    &:hover
+      color: #fff
+      background: $clrWarningHover
+
+  &--md-full
+    +r($md)
+      width: 100%
+
+  &--sm-full
+    +r($sm)
+      width: 100%
+
+  &--full
+    width: 100%
+
+  &--auto
+    flex: 1 1 auto
+
+  &.--small
+    padding: 12px 20px
+    font-size: 14px
+
+  &.--fz12
+    font-size: 12px
+
+  &.--modal-reset
+    margin: 0
+    padding: 0
+    border: none
+    background: none
+    color: inherit
+
+  &.--mg-left
+    margin-left: 16px
+    
+  &.--loaded
+    color: rgba(0,0,0,0)
+    pointer-events: none
+    
+    .dot-loader
+      display: block
+      
+  .dot-loader 
+    $size-dot: 8px
+    $size-big-dot: 16px
+    $color-white: rgba(255, 255, 255, 1)
+    $color-black: rgba(0, 0, 0, 1)
+    position: absolute
+    top: calc(50% - #{$size-dot}/2)
+    left: calc(50% - #{$size-dot}/2)
+    display: none
+    width: $size-dot
+    height: $size-dot
+    margin: auto
+    border-radius: 50%
+    background-color: rgba(255, 255, 255, .2)
+    animation: dotFlashing 0.5s infinite linear alternate
+    animation-delay: 0.25s
+    
+    &:before, &:after 
+      position: absolute
+      top: 0
+      content: ''
+      display: inline-block
+      width: inherit
+      height: inherit
+      border-radius: 50%
+      background-color: inherit
+      animation: inherit
+  
+    
+    &:before 
+      left: -$size-dot * 1.5
+      animation-delay: 0s
+  
+    
+    &:after 
+      left: $size-dot * 1.5
+      animation-delay: 0.5s
+  
+    
+    &.-size-big 
+      width: $size-big-dot
+      height: $size-big-dot
+      
+      &:before 
+        left: -$size-big-dot * 1.5
+    
+      &:after 
+        left: $size-big-dot * 1.5
+    
+    @keyframes dotFlashing 
+      0% 
+        background-color: rgba(255, 255, 255, .2) 
+      20% 
+        background-color: rgba(255, 255, 255, .55)
+      50%  
+        background-color: rgba(255, 255, 255, .8)
+      100%  
+        background-color: rgba(255, 255, 255, .8)
+
+
+.link-box
+  display: inline-flex
+  align-items: center
+
+  .svg-icon
+    margin-right: 8px
+    +r($lg)
+      margin-right: 8px
+
+
+.link-link
+  color: $clrGrey100
+
+  &:hover
+    color: $clrPrimaryMain
+
+
+.icon-btn
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  width: 40px
+  height: 40px
+  border: none
+  background: transparent
+  border-radius: 8px
+  cursor: pointer
+
+.icon-btn:hover 
+  background: rgba(0, 0, 0, 0.04)
+
+.icon-btn:focus-visible 
+  outline: 2px solid #99c2ff
+  outline-offset: 2px
+
+.icon-btn--success.is-asserted 
+  background: rgba(0, 128, 0, 0.08)
+
+.icon-btn[disabled] 
+  opacity: 0.5
+  cursor: default
+  pointer-events: none
+
+.icon-btn--success:hover
+  background: rgba(0, 128, 0, 0.06)
+

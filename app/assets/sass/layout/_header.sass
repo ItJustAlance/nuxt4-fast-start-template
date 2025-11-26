@@ -1,0 +1,432 @@
+@use '~/assets/sass/utilities/variables' as *
+@use '~/assets/sass/utilities/mixins' as *
+
+.header
+  width: 100%
+  position: relative
+  z-index: 3
+  padding: 27px 0
+  background: #fff
+  +r($lg)
+    padding: 0
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+  .mobile-menu
+    display: none
+    &.open
+      display: block  
+    .all
+      padding: 0
+      box-shadow: none
+  &.--menu-open
+    .svg-icon--user
+      display: none
+    .header__logo
+      margin-left: 0
+      order: 0
+    .mobile-menu.open
+      position: fixed
+      left: 0
+      right: 0
+      top: 0
+      height: 100dvh
+      overflow: auto
+      -webkit-overflow-scrolling: touch // включил плавный скролл для webkit браузеров
+      overscroll-behavior: contain
+      background: #fff
+      padding-bottom: 16px
+      .header__nav-menu
+        display: block
+        position: relative
+        top: 92px
+        padding-left: 16px
+        padding-right: 16px
+  &.--lk-open
+    .svg-icon--user
+      display: none
+    .header__logo
+      margin-left: 0
+      order: 0
+    .mobile-menu.open
+      display: block
+      position: absolute
+      width: 100%
+      background: #fff
+      top: 100%
+      left: 0
+      height: calc(100vh - 66px)
+      overflow: auto
+      .header__nav-menu
+        display: block
+        position: relative
+        top: 0
+        padding-left: 16px
+        padding-right: 16px
+  .all
+    display: flex
+    +r($lg)
+      align-items: center
+      background-color: #ffffff
+      box-shadow: 0 2px 4px 0 #0000001F
+      padding: 17px 16px
+      position: relative
+      z-index: 2
+    +r($sm)
+      padding: 12px 16px
+
+  &__logo
+    min-width: 40px
+    margin-right: 24px
+    +r($lg)
+      margin: 0 auto
+      order: 1
+    +r($sm)
+      min-width: 26px
+
+  &__lk
+    display: none
+    +r($lg)
+      display: block
+      order: 2
+  &__nav
+    display: flex
+    flex: 1 1 auto
+    margin-right: 24px
+    +r($lg)
+      flex: 0
+      margin-right: 0
+      order: 0
+    &-ico
+      display: none
+      width: 42px
+      height: 42px
+      +r($lg)
+        display: flex
+        align-items: center
+        justify-content: center
+        
+    &-menu
+      padding: 0
+      margin: 0
+      list-style: none
+      font-weight: 700
+      display: flex
+      //align-items: center
+      justify-content: space-between
+      flex: 1 1 auto
+      +r($lg)
+        display: none
+        position: absolute
+        top: 100%
+        left: 0
+        width: 100%
+        &.open
+          display: block
+      .nav-menu-item
+        display: flex
+        align-items: center
+        padding-bottom: 27px
+        margin-bottom: -27px
+        +r($lg)
+          margin: 0 0 24px
+          padding: 0
+          width: 100%
+          flex-direction: column
+          align-items: normal
+          font-size: 28px
+          overflow-x: hidden
+        a
+          &:hover
+            color: $clrPrimaryMain
+        &__submenu
+          &.--open
+            .nav-menu-item__link
+              border-bottom-width: 2px
+            .submenu
+              @media(max-width: 1180px)
+                display: block
+          &:hover
+            .submenu
+              @media(min-width: 1181px)
+                display: block
+        &__link
+          display: flex
+          padding: 8px 16px
+          color: $clrGrey90
+          align-items: center
+          +r($lg)
+            padding-left: 0
+            padding-right: 0
+            border-bottom: 1px solid $clrPrimaryMain
+          &.--arr
+            .svg-icon--menu-arr
+              svg
+                fill: none
+                margin-left: 0
+                width: 16px
+                height: 16px
+                .p1
+                  fill: #800019
+                  +r($lg)
+                    fill: $clrPrimaryMain
+                .p2
+                  stroke: #800019
+                  +r($lg)
+                    stroke: $clrPrimaryMain
+                
+  .submenu
+    display: none
+    z-index: 1
+    position: absolute
+    top: calc(100% - 13px)
+    left: 5%
+    right: 5%
+    width: auto
+    margin: 0 auto
+    box-shadow: 0 9px 8px 0 rgba(0, 0, 0, 0.09)
+    background: #fff
+    border-radius: 0 0 32px 32px
+    overflow: auto
+    max-width: fit-content
+    max-height: fit-content
+    +r($lg)
+      position: static
+      top: 0
+      width: auto
+      min-width: 100%
+      padding-top: 24px
+      overflow: unset
+      box-shadow: none
+      border-radius: 0
+    &.open
+      display: block
+    a
+      color: #000
+      &:hover
+        color: $clrPrimaryMain
+    &__wrapper
+      width: 100%
+    &__title
+      font-size: 12px
+      font-weight: 700
+      text-transform: uppercase
+      color: $clrPrimaryPressed
+      padding: 8px 0
+      border-bottom: 1px solid $clrPrimaryPressed
+    &__items
+      padding-top: 32px
+      margin: 0 -10px
+      display: flex
+      flex-wrap: wrap
+      +r($lg)
+        padding-top: 24px
+        margin: 0
+        
+    &__item
+      min-width: 33.333%
+      max-width: 33.333%
+      padding: 0 10px 30px
+      font-size: 16px
+      color: $clrGrey70
+      font-weight: 400
+      +r($lg)
+        min-width: 100%
+        max-width: 100%
+        padding: 24px 10px
+      &-up
+        display: flex
+        padding-bottom: 8px
+        background: url(/img/red/caret-right.svg) 100% 0 no-repeat
+        padding-right: 30px
+      &-label
+        font-size: 20px
+        font-weight: 700
+        color: #000
+        padding-bottom: 8px
+        padding-top: 3px
+        +r($xl)
+          font-size: 18px
+        +r($lg)
+          display: flex
+          align-items: center
+          flex: 1 1 auto
+          width: 100%
+          font-weight: 700
+          color: #000
+          text-decoration: none
+          -webkit-tap-highlight-color: rgba(0,0,0,.1)
+          touch-action: manipulation
+          padding-bottom: 4px
+          padding-right: 35px
+        +r($xss)
+          font-size: 18px
+      &-bottom
+        padding-top: 4px
+        padding-right: 30px
+        +r($lg)
+          padding-top: 0
+    &__icon
+      min-width: 32px
+      max-width: 32px
+      margin-right: 10px
+    .list-submenu3
+      margin: 0
+      padding: 0
+      list-style: none
+      +r($lg)
+        font-size: 14px
+      li
+        display: block
+        a
+          font-weight: 700
+        & + li
+          margin-top: 12px
+
+  &__right
+    display: flex
+    margin-left: auto
+    +r($lg)
+      display: none
+    .b-links-logins
+      display: flex
+      align-items: center
+      .btn
+        &+.btn
+          margin-left: 24px
+    .b-view-low-vision
+      margin-left: 24px
+      display: flex
+      align-items: center
+      &:hover
+        opacity: .8
+      svg
+        fill: none
+        stroke: $clrPrimaryMain
+
+.menu-no-hover
+  .submenu
+    display: none !important
+
+.auth-info
+  display: flex
+  align-items: center
+  position: relative
+  
+  &.show
+    .auth-info__dropdown
+      display: block
+    .auth-info__label-arr
+      transform: rotate(180deg)
+  &-wrapper
+    display: flex
+    align-items: center
+    gap: 24px
+  &__label
+    overflow: hidden
+    white-space: nowrap
+    display: flex
+    align-items: center
+    gap: 8px
+    cursor: pointer
+    +r($lg)
+      display: none
+    &-name
+      font-weight: 700
+      color: $clrPrimaryPressed
+    &-ico
+      display: flex
+      align-items: center
+      max-width: 40px
+    &-arr
+      display: flex
+      align-items: center
+      svg
+        fill: none
+        .p1
+          fill: #1D2533
+        .p2
+          stroke: #1D2533
+  &__title
+    color: $clrPrimaryPressed
+    font-size: 12px
+    font-weight: 700
+    padding: 8px 0
+    border-bottom: 1px solid $clrPrimaryPressed
+    margin-top: 12px
+    text-transform: uppercase
+    &__link
+      color: $clrPrimaryPressed
+  &__bottom
+    color: $clrPrimaryPressed
+    font-size: 12px
+    font-weight: 700
+    padding: 8px 0
+    border-top: 1px solid $clrPrimaryPressed
+    margin-top: 12px
+    
+  &__list
+    margin: 0 -12px
+    padding: 0
+    list-style: none
+    display: flex
+    flex-direction: column
+    li
+      padding: 10px 12px
+
+  &__dropdown
+    display: none
+    box-shadow: 0px 8px 16px 0px #00000014
+    border-radius: 12px
+    background: #fff
+    padding: 20px 12px 4px
+    position: absolute
+    top: 100%
+    right: 0
+    z-index: 3
+    width: 300px
+    font-weight: 400
+    font-size: 16px
+    white-space: normal
+    +r($lg)
+      display: block
+      position: relative
+      z-index: 1
+      width: 100vw
+      box-shadow: none
+      border-radius: 0
+    .name
+      font-weight: 700
+      font-size: 20px
+      color: #000
+      padding-bottom: 8px
+    .office
+      color: $clrGrey70
+    .text
+      padding-bottom: 12px
+      color: $clrGrey70
+    .link-box
+      color: $clrGrey90
+      display: flex
+      align-items: center
+      .num
+        margin-left: auto
+        color: #fff
+        background: $clrSecondaryMain
+        display: flex
+        width: 24px
+        height: 24px
+        border-radius: 50%
+        align-items: center
+        justify-content: center
+        font-size: 12px
+        font-weight: 700
+  
+  &__user-info
+    display: flex
+    margin-bottom: 12px
+    .ava
+      min-width: 42px
+      max-width: 42px
+      margin-right: 10px

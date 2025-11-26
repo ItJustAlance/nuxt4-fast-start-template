@@ -1,0 +1,211 @@
+@use '~/assets/sass/utilities/variables' as *
+@use '~/assets/sass/utilities/mixins' as *
+
+.over 
+  .p-datatable.table-prime
+    &.--personal-table
+      .p-datatable-tbody > tr
+        & > td
+          padding: 14px 8px
+          &.td-checkbox
+            padding: 14px 8px
+    .p-datatable-tbody > tr
+      position: relative
+      & > td
+        &.td-checkbox
+          padding-top: 22px
+          padding-bottom: 22px
+          width: 50px
+  .p-datatable-hoverable .p-datatable-tbody > tr:not(.p-datatable-row-selected):hover
+    background: $clrGrey20
+.table-prime
+  &.--personal-table
+    td
+      padding: 14px 8px
+  td
+    vertical-align: top
+    
+  &__title-text
+    color: $clrGrey90
+  .td-checkbox
+    padding: 14px 16px
+  .text-name
+    color: $clrGrey90
+    font-weight: 600
+    margin-bottom: 2px
+    +r($lg)
+      font-weight: 500
+  .text-date
+    color: $clrGrey70
+    font-weight: 300
+    font-size: 12px
+    margin-bottom: 2px
+  .td-name
+    width: auto
+    +r($lg)
+      width: auto
+  .td-dates
+    width: 120px
+    +r($hd)
+      width: 150px
+  .tuggler-wrapper
+    display: none
+    &.--flex-end
+      justify-content: flex-end
+  .tuggler-text
+    overflow: hidden
+    max-width: 90%
+    
+  .tuggler-content
+    overflow: hidden
+    flex: 1 1 auto
+    padding-left: 20px
+  .tuggler-buttons
+    display: block
+    gap: 24px
+    background: $clrGrey20
+    &.--mobile
+      +r($lg)
+        display: flex
+        gap: 12px
+        flex-wrap: wrap
+        justify-content: center
+        position: relative
+        top: 0
+        left: 0
+        right: 0
+    .btn
+      margin-right: 8px
+      font-size: 12px
+      &--inline
+        color: $clrSecondaryMain
+        font-weight: 300
+        .svg-icon + .btn-label
+          margin-top: 2px
+        &:hover
+          color: $clrSecondaryHover
+      &-delete
+        color: $clrRed50
+        &:hover
+          color: $clrRed70
+ 
+  // .p-datatable-table
+    // td
+      //position: relative
+  .p-datatable-selectable-row:hover
+    .tuggler-wrapper
+      display: flex
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      align-items: center
+    .td-checkbox
+      // opacity: 0
+      // z-index: -1
+    .td-content
+      // opacity: 0
+      // z-index: -1
+      
+      
+.table-header
+  display: flex
+  padding-bottom: 12px
+  gap: 12px
+  +r($lg)
+    flex-wrap: wrap
+    .lg-icon
+      border-radius: 4px
+      border: 1px solid $clrGrey30
+      flex: 0 0 36px
+      display: flex
+      align-items: center
+      justify-content: center
+  .btn-groups
+    display: flex
+    gap: 16px
+    position: relative
+    width: 100%
+    +r($sm)
+      &.open
+        .btn-groups__content
+          display: flex
+    &__content
+      display: flex
+      gap: 16px
+      +r($sm)
+        display: none
+        position: absolute
+        top: calc(100% + 12px)
+        right: 0
+        background: #fff
+        padding: 12px
+        border-radius: 4px
+        border: 1px solid $clrGrey30
+        z-index: 1
+        flex-direction: column
+        .btn
+          margin: 0
+    &__toggler
+      margin-left: auto
+      display: none
+      +r($sm)
+        display: block
+    .btn-toggler
+      min-width: 36px
+      max-width: 36px
+      height: 36px
+      display: flex
+      justify-content: center
+      align-items: center
+      border-radius: 4px
+      border: 1px solid $clrGrey40
+  &__left
+    margin-right: auto
+    display: flex
+    gap: 24px
+    +r($lg)
+      width: 100%
+      gap: 12px
+      flex-wrap: wrap
+  .dropdown--sorting
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yLjY0NjQ1IDEwLjY0NjRDMi44NDE3MSAxMC40NTEyIDMuMTU4MjkgMTAuNDUxMiAzLjM1MzU1IDEwLjY0NjRMNSAxMi4yOTI5TDYuNjQ2NDUgMTAuNjQ2NEM2Ljg0MTcxIDEwLjQ1MTIgNy4xNTgyOSAxMC40NTEyIDcuMzUzNTUgMTAuNjQ2NEM3LjU0ODgyIDEwLjg0MTcgNy41NDg4MiAxMS4xNTgzIDcuMzUzNTUgMTEuMzUzNkw1LjM1MzU1IDEzLjM1MzZDNS4xNTgyOSAxMy41NDg4IDQuODQxNzEgMTMuNTQ4OCA0LjY0NjQ1IDEzLjM1MzZMMi42NDY0NSAxMS4zNTM2QzIuNDUxMTggMTEuMTU4MyAyLjQ1MTE4IDEwLjg0MTcgMi42NDY0NSAxMC42NDY0WiIgZmlsbD0iIzQyNDI0MiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTUgMi41QzUuMjc2MTQgMi41IDUuNSAyLjcyMzg2IDUuNSAzVjEzQzUuNSAxMy4yNzYxIDUuMjc2MTQgMTMuNSA1IDEzLjVDNC43MjM4NiAxMy41IDQuNSAxMy4yNzYxIDQuNSAxM1YzQzQuNSAyLjcyMzg2IDQuNzIzODYgMi41IDUgMi41WiIgZmlsbD0iIzQyNDI0MiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEwLjY0NjQgMi42NDY0NUMxMC44NDE3IDIuNDUxMTggMTEuMTU4MyAyLjQ1MTE4IDExLjM1MzYgMi42NDY0NUwxMy4zNTM2IDQuNjQ2NDVDMTMuNTQ4OCA0Ljg0MTcxIDEzLjU0ODggNS4xNTgyOSAxMy4zNTM2IDUuMzUzNTVDMTMuMTU4MyA1LjU0ODgyIDEyLjg0MTcgNS41NDg4MiAxMi42NDY0IDUuMzUzNTVMMTEgMy43MDcxMUw5LjM1MzU1IDUuMzUzNTVDOS4xNTgyOSA1LjU0ODgyIDguODQxNzEgNS41NDg4MiA4LjY0NjQ1IDUuMzUzNTVDOC40NTExOCA1LjE1ODI5IDguNDUxMTggNC44NDE3MSA4LjY0NjQ1IDQuNjQ2NDVMMTAuNjQ2NCAyLjY0NjQ1WiIgZmlsbD0iIzQyNDI0MiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTExIDIuNUMxMS4yNzYxIDIuNSAxMS41IDIuNzIzODYgMTEuNSAzVjEzQzExLjUgMTMuMjc2MSAxMS4yNzYxIDEzLjUgMTEgMTMuNUMxMC43MjM5IDEzLjUgMTAuNSAxMy4yNzYxIDEwLjUgMTNWM0MxMC41IDIuNzIzODYgMTAuNzIzOSAyLjUgMTEgMi41WiIgZmlsbD0iIzQyNDI0MiIvPgo8L3N2Zz4K") 16px 50% no-repeat
+    background-size: 16px auto
+    padding-left: 24px
+    .p-dropdown-panel
+      left: auto !important
+      right: 0 !important
+    +r($lg)
+      background: none
+      padding-left: 0
+  &__right
+    display: flex
+    gap: 24px
+    +r($lg)
+      width: 100%
+      gap: 12px
+.table-page-views
+  display: flex
+  gap: 4px
+  font-size: 12px
+  font-weight: 300
+  .item-page
+    width: 30px
+    text-align: center
+    &-link
+      width: 100%
+      padding: 2px 0
+      &.--current, &:hover
+        color: $clrPrimaryMain
+        background: $clrGrey20
+      
+.table-prime.p-datatable
+  .p-datatable-tbody
+    > tr.p-highlight
+      background: inherit
+      +r($lg)
+
+  // .td-wrapper
+    //position: relative
+ 

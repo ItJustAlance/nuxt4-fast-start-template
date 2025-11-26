@@ -1,0 +1,38 @@
+@use 'utilities/variables';
+@use 'utilities/mixins';
+@use 'utilities/mq-detected';
+
+@use 'vendor/normalize';
+@use 'vendor/_primevue-overrides.sass';
+// @use 'primevue/resources/themes/lara-light-blue/theme';
+
+// @use "vendor/aos/aos";
+// @use vendor/hamburgers
+
+@use 'layout/font';
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/general';
+@use 'layout/personal';
+
+@use 'elements/tables';
+@use 'elements/ui';
+@use 'elements/typography';
+@use 'elements/buttons';
+@use 'elements/checkbox';
+@use 'elements/icons';
+@use 'elements/forms';
+@use 'elements/media';
+@use 'elements/file-upload';
+
+@use 'components/components';
+@use 'components/tables-prime'; // различные таблицы из primevue
+@use 'components/ai-review';
+@use 'components/accountant';
+
+@use 'pages/pages';
+@use 'pages/profileLevel';
+@use 'pages/faces';
+
+@use 'themes/light';
+

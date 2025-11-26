@@ -1,0 +1,82 @@
+@use '~/assets/sass/utilities/variables' as *
+@use '~/assets/sass/utilities/mixins' as *
+
+.event-list
+  display: flex
+  flex-wrap: wrap
+  margin: 0 -20px
+  &.--mb0
+    .event-item
+      padding-bottom: 0
+  &.--cols4
+    .event-item
+      min-width: 25%
+      max-width: 25%
+      width: 25%
+      +r($lg)
+        min-width: 50%
+        max-width: 50%
+        width: 50%
+        margin-bottom: 36px
+      +r($smm)
+        min-width: 100%
+        max-width: 100%
+        width: 100%
+  &.--list-3-column
+    column-count: 3
+    font-size: 1px
+    display: block
+    +r($md)
+      column-count: 2
+    +r($smm)
+      column-count: auto
+    .event-item
+      font-size: 16px
+      break-inside: avoid
+      width: 100%
+      
+.event-item
+  width: 33.333%
+  padding: 0 20px 36px
+  +r($md)
+    width: 50%
+  +r($smm)
+    width: 100%
+  &.--mini-img
+    .img
+      max-height: 130px
+      img
+        object-fit: cover
+        height: 100%
+        object-position: center
+  .img
+    margin-bottom: 12px
+    overflow: hidden
+    border-radius: 24px
+    position: relative
+    .tags-list
+      position: absolute
+      top: 8px
+      left: 8px
+    img
+      object-fit: cover
+        
+  .event-row
+    display: flex
+    margin-bottom: 12px
+  .date
+    font-size: 14px
+    color: $clrGrey70
+    font-weight: 700
+  .price
+    margin-left: auto
+    font-size: 14px
+    color: $clrGrey70
+    font-weight: 700
+  .title
+    font-weight: 700
+    font-size: 20px
+    .link
+      color: #000
+      &:hover
+        color: $clrPrimaryHover

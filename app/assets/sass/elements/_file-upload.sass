@@ -1,0 +1,48 @@
+@use '~/assets/sass/utilities/variables' as *
+.file-upload-box
+  position: relative
+  &-content
+    position: relative
+    border: 1px dashed #F0F0F0
+    padding: 9px
+    width: 100%
+  .upload-up
+    display: flex
+    justify-content: center
+    padding-bottom: 9px
+  .upload-content
+    text-align: center
+    width: 100%
+    .upload-empty
+      font-size: 14px
+      font-weight: 300
+      .file-text
+        color: $clrGrey90
+      .file-text-types
+        font-size: 12px
+        padding-top: 2px
+        color: $clrGrey70
+  .p-fileupload-advanced
+    border: none
+    background: none
+  .p-fileupload-header
+    margin: 0
+    padding: 0
+    border: none
+  .p-fileupload-content
+    // position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    position: relative
+    padding: 15px 0
+    &:after
+      content: ''
+      position: absolute
+      top: 2px
+      left: 2px
+      right: 2px
+      bottom: 2px
+      z-index: -1
+      background-color: $clrGrey40
+      mask: linear-gradient(to right, transparent 40%, black 40%) 0 0 / 15px 2px repeat-x, linear-gradient(to right, transparent 40%, black 40%) 0 100% / 15px 2px repeat-x, linear-gradient(to bottom, transparent 40%, black 40%) 0 0 / 2px 15px repeat-y, linear-gradient(to bottom, transparent 40%, black 40%) 100% 0 / 2px 15px repeat-y

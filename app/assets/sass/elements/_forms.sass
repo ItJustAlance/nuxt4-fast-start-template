@@ -1,0 +1,336 @@
+@use '~/assets/sass/utilities/variables' as *
+@use '~/assets/sass/utilities/mixins' as *
+
+.over   
+  .p-inputtext.--clock
+    background: url(/img/red/input-clock.svg) calc(100% - 12px) 50% no-repeat
+    padding-right: 32px
+
+button
+  font-family: $baseFont
+.input, .over input.p-inputtext
+  width: 100%
+  &.--small
+    max-width: 200px
+textarea.input
+  min-height: 56px
+  width: 100%
+  +r($lg)
+    min-height: 48px
+    
+    
+
+.form
+  display: flex
+  flex-direction: column
+  gap: 32px
+  &.--form-box-size-big
+    .form-box
+      margin-bottom: 64px
+      &.--small
+        margin-bottom: 32px
+  &-box
+    margin-bottom: 20px
+  &-item
+    &.error
+      
+      .error-message
+        padding-top: 5px
+        color: $clrErrorMain
+      .form-label
+        color: $clrErrorMain
+      .p-dropdown
+        border-color: $clrErrorMain
+        background: $clrErrorSecond
+      .input
+        border-color: $clrErrorMain
+        background: $clrErrorSecond
+  &-title
+    color: #000
+    margin: 0
+    padding: 0 0 24px
+  
+  &-row
+    display: flex
+    gap: 48px
+    +r($lg)
+      gap: 36px
+      
+  &-label
+    color: $clrGrey90
+    display: flex
+    align-items: center
+    padding-bottom: 8px
+    font-size: 16px
+    font-weight: 300
+    +r($lg)
+      font-size: 16px
+      padding-bottom: 8px
+    .text
+      display: inline-flex
+      vertical-align: top
+      margin-right: 4px
+      +r($lg)
+        margin-right: 4px
+  &-input
+    & + .row-checkbox
+      margin-top: 12px
+.c-md-1
+  width: 100%
+.c-md-2
+  width: 50%
+
+.box-fields
+  padding-bottom: 10px
+  margin-bottom: 10px
+  &__row
+    &+.box-fields__row
+      margin-top: 20px
+
+.just-multiselect
+  &.open
+    .search-clear
+      display: block
+    .just-multiselect-wrapper
+      border-color: #003E5B
+    .just-multiselect__label .text .input__search
+      opacity: 1
+      background: #fff
+  &.top
+    .just-multiselect
+      &__dropdown
+        top: auto
+        bottom: 100%
+  &.--single
+    .just-multiselect
+      &__item
+        .text
+          padding-left: 0
+      &-result
+        .result-item
+          width: 100%
+  &.--result-text-full
+    .just-multiselect-result
+      .result-item
+        .text
+          white-space: normal
+          text-overflow: unset
+  &.--result-column-1
+    .just-multiselect-result
+      .result-item
+        width: 100%
+  &.--disabled
+    cursor: no-drop
+    *
+      cursor: no-drop
+    .just-multiselect__label
+      background: $clrGrey20
+      color: $clrGrey50
+      border-color: $clrGrey20
+      
+  &-wrapper
+    position: relative
+    background: #fff
+    border: 1px solid $clrGrey40
+    border-radius: 4px
+  &__label
+    position: relative
+    font-size: 14px
+    color: $clrGrey70
+    padding: 6px 8px
+    display: flex
+    cursor: pointer
+    +r($lg)
+      font-size: 14px
+    .icon
+      margin-right: 8px
+      min-width: 24px
+      .svg-icon
+        width: 24px
+    .text
+      flex: 1 1 auto
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+      margin-right: 32px
+      position: relative
+      padding-top: 3px
+      .input__search
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        border: none
+        font-size: 14px
+        font-weight: 300
+        opacity: 0
+        bottom: 0
+    .arr
+      position: absolute
+      top: 10px
+      right: 8px
+    .search-clear
+      display: none
+      position: absolute
+      width: 24px
+      height: 24px
+      top: 6px
+      right: 11px
+      border: none
+      background: $clrGrey20
+      color: $clrPrimaryMain
+      z-index: 1
+      +r($lg)
+        width: 24px
+        height: 24px
+      .svg-icon
+        width: 24px
+        height: 24px
+        fill: $clrPrimaryMain
+        stroke: none
+        +r($lg)
+          width: 24px
+          height: 24px
+  &__dropdown
+    position: absolute
+    top: 100%
+    left: 0
+    z-index: 2
+    width: 100%
+    background: #fff
+    border-radius: 4px
+    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.10)
+    &-bottom
+      display: flex
+      justify-content: flex-end
+      padding: 8px 16px
+      +r($lg)
+        padding: 8px 16px
+      .btn
+        margin-left: 12px
+        +r($lg)
+          margin-left: 12px
+  &__list
+    overflow: auto
+    max-height: 300px
+  &__item
+    padding: 6px 16px
+    display: flex
+    width: 100%
+    cursor: pointer
+    font-size: 14px
+    font-weight: 300
+    position: relative
+    +r($lg)
+      font-size: 14px
+      padding: 6px 16px
+    &:hover, &.active
+      background: $clrPrimarySecond
+      color: $clrPrimaryMain
+    .p-checkbox
+      position: absolute
+      top: 7px
+      left: 17px
+      margin-right: 8px
+      height: auto
+      +r($lg)
+        margin-right: 8px
+    .icon-checkbox
+      width: 16px
+      height: 16px
+      border: 1px solid #C2C2C2
+      border-radius: 3px
+      background: #fff
+      +r($lg)
+        width: 16px
+        height: 16px
+    .text
+      padding-left: 32px
+      background: rgba(255,255,255, 0)
+      position: relative
+    
+.list-box-result, .just-multiselect-result
+  padding-top: 12px
+  display: flex
+  flex-wrap: wrap
+  margin: 0 -24px
+  +r($lg)
+    padding-top: 12px
+    margin: 0 -24rem
+  &__wrapper
+    width: 100%
+  .result-item
+    display: flex
+    padding: 6px 24px
+    width: 100%
+    +r($lg)
+      padding: 6rem 24rem
+    &-wrapper
+      background: $clrPrimarySecond
+      color: $clrGrey80
+      padding: 8px 16px
+      font-weight: 500
+      display: flex
+      gap: 12px
+      width: 100%
+      +r($lg)
+        padding: 8rem 16rem
+    .text
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+    &__delete
+      width: 16px
+      cursor: pointer
+      margin-left: auto
+      margin-top: 4px
+      &:hover
+        opacity: .8
+      +r($lg)
+        width: 16rem
+      .svg-icon
+        stroke: none
+        width: 16px
+        +r($lg)
+          width: 16rem
+
+.just-textarea-tag
+  .list-box-result
+    .result-item
+      .text
+        white-space: normal
+        text-overflow: ellipsis
+  &.--single
+    .list-box-result
+      .result-item
+        width: 100%
+
+.listeren-list-result
+  display: flex
+  flex-direction: column
+  gap: 12px
+  &__item
+    color: $clrGrey70
+    display: flex
+    border-bottom: 1px solid $clrGrey70
+    padding: 6px 0
+    .title-box
+      font-size: 16px
+      min-width: 50%
+      max-width: 50%
+      &__title
+        font-weight: 200
+        color: $clrSecondaryMain
+      &__desc
+        font-size: 12px
+        
+    .full-box
+      display: flex
+      align-items: center
+      flex: 1 1 auto
+      justify-content: center
+    .icons-box
+      min-width: 36px
+      max-width: 36px
+      display: flex
+      justify-content: center

@@ -1,0 +1,117 @@
+@use '~/assets/sass/utilities/variables' as *
+@use '~/assets/sass/utilities/mixins' as *
+
+// ICONS
+
+// You might use sprite instead
+// upload .png and @2x.png to /icons folder to create png sprite
+// or upload .svg to create .svg sprite and use :use attr
+
+// hint
+// png sprite have .icon prefix
+// svg sprtite have .ico prefix
+
+// this section intended to be for custom icons which for some reason
+// can't be parsed correctly or sprite is not required
+
+.svg-icon
+  display: inline-flex
+  align-items: center
+  fill: currentColor
+  font-style: normal
+  vertical-align: top
+  // content: ' '
+  width: 16px
+  height: 16px
+  &.nuxt-icon svg
+    width: inherit
+    height: inherit
+    margin-bottom: 0
+    vertical-align: top
+    fill: none
+    
+  +r($lg)
+    width: 16px
+    height: 16px
+  &.ic-clr.nuxt-icon svg
+    fill: none
+  &.ic12
+    width: 12px
+    height: 12px
+  &.ic16
+    width: 16px
+    height: 16px
+    +r($lg)
+      width: 16px
+      height: 16px
+  &.ic20
+    width: 20px
+    height: 20px
+    +r($lg)
+      width: 20px
+      height: 20px
+  &.ic24
+    width: 24px
+    height: 24px
+    +r($lg)
+      width: 24px
+      height: 24px
+    
+  &.ic32
+    width: 32px
+    height: 32px
+    +r($lg)
+      width: 32px
+      height: 32px
+  &.ic36
+    width: 36px
+    height: 36px
+    +r($lg)
+      width: 32px
+      height: 32px
+  &.ic40
+    width: 40px
+    height: 40px
+    +r($lg)
+      width: 40px
+      height: 40px
+  &.ic42
+    width: 42px
+    height: 42px
+
+  &.ic48
+    width: 48px
+    height: 48px
+    +r($lg)
+      width: 48px
+      height: 48px
+      
+      
+  &--ic-arrow-circle-right
+    color: #E51740
+    .path-fill
+      fill: #E51740
+      stroke: none
+    
+      
+// reset for empty icons
+.svg-icon
+  fill: currentColor
+  stroke: currentColor
+  &.fnone svg
+    fill: none
+  &.--stroke svg
+    stroke: currentColor
+  &.--fill-blue svg
+    stroke: #0096E0
+  &.--fill-red svg
+    stroke: #E51740
+  &.--fill-green svg
+    stroke: #6BC497
+  &.--stroke-none
+    stroke: none
+    
+.lg-icon
+  display: none
+  +r($lg)
+    display: block

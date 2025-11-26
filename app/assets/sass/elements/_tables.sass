@@ -1,0 +1,443 @@
+@use '~/assets/sass/utilities/variables' as *
+@use '~/assets/sass/utilities/mixins' as *
+
+
+.table-cm
+  display: flex
+  width: 100%
+  flex-direction: column
+  font-size: 14px
+
+  .--text-right
+    text-align: right
+
+  .--text-center
+    text-align: center
+
+  .small-text-gray
+    font-size: 12px
+    color: $clrGrey70
+
+  +r($lg)
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+    mask-image: linear-gradient(to right, transparent, #000 12px, #000 calc(100% - 12px), transparent)
+    will-change: scroll-position
+
+  &__row
+    display: flex
+    position: relative
+    border-bottom: 1px solid #D9D9D9
+
+  &__td
+    flex: 1 1 auto
+    padding: 14px 8px
+    position: relative
+    display: flex
+    
+    &.--col-100
+      min-width: 100px
+      max-width: 100px
+    &.--col-120
+      min-width: 120px
+      max-width: 120px
+
+    &.--col-140
+      min-width: 140px
+      max-width: 140px
+
+    &.--col-160
+      min-width: 160px
+      max-width: 160px
+
+    &.--col-170
+      min-width: 170px
+      max-width: 170px
+
+    &.--col-180
+      min-width: 180px
+      max-width: 180px
+
+    &.--col-200
+      min-width: 200px
+      max-width: 200px
+
+    &.--col-720
+      min-width: 70px
+      max-width: 200px
+
+    &.--th
+      color: #000
+      background: $clrGrey20
+      font-weight: 500
+
+      &.--align-top
+        justify-content: flex-start
+
+  &__box-toggle-toggler
+    display: flex
+
+  &__box-toggle-title
+    display: flex
+
+  .--flex-auto
+    flex: 1 1 auto
+
+  .--col-350
+    flex: 0 0 350px
+
+  .--col-400
+    flex: 0 0 400px
+
+  .--col-450
+    flex: 0 0 450px
+    min-width: 450px
+    max-width: 450px
+    
+  .--col-460
+    flex: 0 0 460px
+    min-width: 460px
+    max-width: 460px
+  
+  .--col-420
+    flex: 0 0 420px
+    min-width: 420px
+    max-width: 420px
+
+  .--col-500
+    flex: 0 0 500px
+
+  .--col-550
+    flex: 0 0 550px
+
+  .col-flex
+    display: flex
+
+  .--col-240
+    min-width: 240px
+    max-width: 240px
+
+  .color-red
+    color: $clrRed70
+
+  .sort
+    position: relative
+    display: inline-block
+    vertical-align: top
+    cursor: pointer
+
+    &.--up
+      .sort-arr-up
+        fill: $clrRed70
+
+    &-label
+      position: relative
+      display: inline-block
+      vertical-align: top
+      padding-right: 20px
+
+    .svg-icon--sort
+      position: absolute
+      top: 1px
+      right: 0
+
+      svg
+        stroke: none
+
+  &__filters
+    display: flex
+    gap: 6px
+    margin-bottom: 32px
+    +r($xl)
+      flex-direction: column
+
+    .btn
+      padding-top: 5px !important
+      padding-bottom: 6px !important
+
+    .personal-search
+      margin-bottom: 0
+      +r($md)
+        width: 100%
+
+      &.--small
+        +r($md)
+          max-width: 600px
+
+    .filter-box-row
+      display: flex
+      gap: 6px
+      flex: 1 1 auto
+      align-items: center
+      +r($md)
+        flex-wrap: wrap
+        gap: 16px 6px
+        margin-top: 16px
+
+      .item-filter
+        flex: 1 1 auto
+        max-width: 335px
+
+        &.--md-100
+          +r($md)
+            flex: 0 0 100%
+            max-width: 100%
+
+        &.--md-50
+          +r($lg)
+            flex: 0 0 calc(50% - 3px)
+            max-width: calc(50% - 3px)
+          +r($md)
+          width: 100%
+          max-width: 100%
+          +r($xss)
+            width: 100%
+            max-width: 100%
+            flex: 0 0 100%
+
+
+        &__group
+          display: flex
+          gap: 6px
+
+          & + .item-filter__group
+            margin-left: 12px
+
+        .p-select
+          width: 100%
+          min-width: 200px
+          +r($md)
+            min-width: 100px
+            width: 100%
+
+        &.--auto
+          max-width: 100%
+
+
+.table-group-toggle
+  .group-toggle-box
+    display: flex
+    width: 100%
+    flex-direction: column
+
+    &__header
+      display: flex
+      align-items: center
+      padding: 12px 0
+      cursor: pointer
+
+      &.--active
+        .arr
+          transform: rotate(0deg)
+
+    &__title
+      position: relative
+      padding-left: 40px
+
+      .arr
+        position: absolute
+        top: 19px
+        left: 8px
+        width: 12px
+        height: 12px
+        transform: rotate(-90deg)
+        transition: all linear .3s
+
+      .art
+        font-size: 12px
+        color: $clrGrey70
+
+      .title
+        padding-top: 2px
+        font-size: 14px
+        color: $clrGrey90
+
+      .time
+        padding-top: 2px
+        font-size: 12px
+        color: $clrGrey70
+
+    &__body
+      padding: 12px 0 12px 48px
+
+.table-cm .action-icons
+  display: flex
+  justify-content: center
+
+  .btn
+    margin-left: 0
+    border: 0
+    justify-content: flex-start
+    padding: 8px 16px
+
+.table-cm .actions-btns .btn
+  margin-left: 0
+
+.table-cm .btn
+  &--link
+    color: #e00051
+
+  &-success
+    color: #6bc497
+
+    &:hover
+      color: #0c9d61
+
+
+.table-mobile
+  display: flex
+  flex-direction: column
+
+  &__header, &__body
+    +r($xss)
+      margin: 0 -16px
+
+  &__row
+    display: flex
+
+    .sort
+      &-label
+        gap: 4px
+        display: flex
+        align-items: center
+
+      &.--up
+        .sort-arr-up
+          fill: $clrRed70
+
+    &.--th
+      background: $clrGrey20
+      color: #13151A
+
+  &__td
+    padding: 14px
+    display: flex
+
+  &__box
+    border-bottom: 1px solid $clrGrey50
+    padding: 8px 0
+
+    &-header
+      display: flex
+
+    &-bottom
+      .actions-box
+        font-size: 14px
+        display: flex
+        gap: 8px
+        flex-wrap: wrap
+        &.--center
+          justify-content: center
+      &.--center
+        justify-content: center
+
+      .btn
+        color: $clrSecondaryMain
+        padding: 6px 12px
+        margin: 0
+
+        &-delete
+          color: $clrRed50
+
+        &-success
+          color: $clrGreen50
+
+          &:hover
+            color: $clrGreen70
+
+      .button-select
+        &.-full
+          width: 100%
+          text-align: center
+
+  &-info
+    font-size: 14px
+    color: $clrGrey60
+
+    strong
+      font-weight: 600
+
+    &__ipr
+      width: 60px
+
+  &-group-info
+    margin-top: 24px
+    padding: 0 16px
+
+  .box-ckecked
+    padding: 14px 16px
+    max-width: 52px
+    min-width: 52px
+
+  .box-id
+    padding: 14px 16px
+    max-width: 52px
+    min-width: 52px
+    font-size: 14px
+    font-weight: 400
+
+  .box-info
+    padding: 14px 16px
+    font-size: 14px
+    font-weight: 300
+    display: flex
+    flex-direction: column
+    gap: 4px
+    color: $clrGrey90
+    width: 100%
+
+    .text-desc
+      color: $clrGrey60
+
+    .row-box-progress
+      width: 100%
+
+    .text-status
+      margin-top: 4px
+
+.p-tooltip
+  .p-tooltip-text
+    padding: 4px 8px
+    font-size: 12px
+    line-height: 20px
+    color: #ffffff
+    background-color: #383d45
+    border-radius: 4px
+
+    
+/* убрать вертикальные границы ячеек */
+.table .p-datatable .p-datatable-thead > tr > th,
+.table .p-datatable .p-datatable-tbody > tr > td,
+.table .p-datatable .p-datatable-tfoot > tr > td
+  border-left: 0 !important
+  border-right: 0 !important
+
+/* Прячем стандартные иконки сортировки */
+.table [data-pc-section='sorticon']
+  display: none !important
+
+/* Иконка сортировки БАЗОВАЯ */
+.table [data-pc-section='sort']
+  display: inline-block
+  width: 16px
+  height: 16px
+  min-width: 16px
+  max-width: 16px
+  background: currentColor
+  mask: url('/assets/icons/red/sort.svg') no-repeat center / contain
+  -webkit-mask: url('/assets/icons/red/sort.svg') no-repeat center / contain
+
+/* По возрастанию */
+.table th[aria-sort='ascending'] [data-pc-section='sort']
+  min-width: 12px
+  max-width: 12px
+  mask: url('/assets/icons/red/sort-up.svg') no-repeat center / contain
+  -webkit-mask: url('/assets/icons/red/sort-up.svg') no-repeat center / contain
+
+/* По убыванию */
+.table th[aria-sort='descending'] [data-pc-section='sort']
+  min-width: 12px
+  max-width: 12px
+  mask: url('/assets/icons/red/sort-down.svg') no-repeat center / contain
+  -webkit-mask: url('/assets/icons/red/sort-down.svg') no-repeat center / contain
+

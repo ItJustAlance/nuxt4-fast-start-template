@@ -1,0 +1,68 @@
+@use '~/assets/sass/utilities/variables' as *
+@use '~/assets/sass/utilities/mixins' as *
+
+.aside
+  max-width: 280px
+  min-width: 280px
+  +r($lg)
+    max-width: 100%
+    min-width: 100%
+  &.--personal
+    max-width: 296px
+    min-width: 296px
+    padding: 0 24px
+    background: #FAFAFA
+    +r($lg)
+      display: none
+    & + .main-personal
+      margin-left: 20px
+      +r($lg)
+        margin-left: 0
+        width: 100%
+    .btn
+      background: none
+      padding: 10px 16px
+      font-size: 14px
+      font-weight: 500
+      border: none
+      color: $clrGrey90
+      width: 100%
+      border-radius: 4px
+      justify-content: flex-start
+      &.active
+        color: $clrPrimaryMain
+        background: none
+      &:hover
+        color: #fff
+        background: $clrPrimaryHover
+  &-menu
+    display: block
+    width: 100%
+    &-wrapper
+      display: flex
+      flex-direction: column
+      gap: 32px
+    &__item
+      width: 100%
+      display: block
+  & + .content-body
+    margin-left: 20px
+    +r($lg)
+      margin: 0
+  &-toggle
+    &-btn
+      background: $clrGrey40
+      color: $clrGrey90
+      font-size: 14px
+      font-weight: 600
+      padding: 8px 16px
+      position: relative
+      display: inline-flex
+      align-items: center
+      width: 100%
+      cursor: pointer
+      .btn-label
+        flex: 1 1 auto
+      .btn-arr
+        display: flex
+        align-items: center
