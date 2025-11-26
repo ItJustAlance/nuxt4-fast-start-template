@@ -101,7 +101,7 @@ watchEffect(async () => {
 
 <template>
   <div class="file-upload-box">
-    <img v-if="srcImg" :src="srcImg" alt="preview" class="file-upload-box__preview" />
+    <img v-if="srcImg" :src="srcImg" alt="preview" class="file-upload-box__preview" >
 
     <FileUpload
       ref="fileUploadRef"
@@ -142,7 +142,7 @@ watchEffect(async () => {
               severity="danger"
               :disabled="!files || files.length === 0"
               @click="clearCallback()"
-            ></button>
+            />
             <ProgressBar
               style="display: none"
               :value="totalSizePercent"
@@ -196,7 +196,7 @@ watchEffect(async () => {
             </Message>
             <div v-if="files.length == 0" class="upload-empty">
               <div v-if="props.imgDefault" class="img-default-wrapper">
-                <img :src="props.imgDefault" alt="defaultPreview" />
+                <img :src="props.imgDefault" alt="defaultPreview" >
               </div>
               <slot name="uploadEmpty">
                 <div class="file-text">или перетащите файл для загрузки</div>
@@ -215,7 +215,7 @@ watchEffect(async () => {
                 class="p-8 rounded-border flex flex-col border border-surface items-center gap-4"
               >
                 <div>
-                  <img role="presentation" :alt="file.name" :src="file.objectURL" width="100" height="50" />
+                  <img role="presentation" :alt="file.name" :src="file.objectURL" width="100" height="50" >
                 </div>
                 <span class="font-semibold text-ellipsis max-w-60 whitespace-nowrap overflow-hidden">{{
                   file.name
@@ -242,7 +242,7 @@ watchEffect(async () => {
                 class="p-8 rounded-border flex flex-col border border-surface items-center gap-4"
               >
                 <div>
-                  <img role="presentation" :alt="file.name" :src="file.objectURL" width="100" height="50" />
+                  <img role="presentation" :alt="file.name" :src="file.objectURL" width="100" height="50" >
                 </div>
                 <span class="font-semibold text-ellipsis max-w-60 whitespace-nowrap overflow-hidden">{{
                   file.name

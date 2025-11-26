@@ -1,7 +1,7 @@
 <!-- ~/components/buttonModal.vue -->
 <template>
   <div class="button-modal" @click="openModal">
-    <slot></slot>
+    <slot/>
   </div>
 </template>
 

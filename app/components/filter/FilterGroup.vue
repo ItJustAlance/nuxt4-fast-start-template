@@ -193,12 +193,12 @@ watch(
     </div>
     <div class="title --mobile" @click="onShow">
       {{ title }}
-      <SvgIcon name="menu-arr" class="ic16"></SvgIcon>
+      <SvgIcon name="menu-arr" class="ic16"/>
     </div>
     <div class="box-filter-body" :class="{ active: isShow }">
       <div v-if="searchable" class="box-filter__search">
         <div v-if="filters.length > 4" class="b-input">
-          <input v-model="searchQuery" type="text" placeholder="Поиск" class="b-input__input" />
+          <input v-model="searchQuery" type="text" placeholder="Поиск" class="b-input__input" >
         </div>
       </div>
       <div class="filter-list" :class="{ '--open': showAllFilters }">
@@ -222,7 +222,7 @@ watch(
           @click="showAllFilters = !showAllFilters"
         >
           <span class="btn-label">{{ showAllFilters ? 'Скрыть' : `Показать еще ${filters.length - 4}` }}</span>
-          <SvgIcon name="caret-circle-down" class="fnone ic24"></SvgIcon>
+          <SvgIcon name="caret-circle-down" class="fnone ic24"/>
         </button>
       </div>
       <div v-if="sliderData" class="filter-slider">

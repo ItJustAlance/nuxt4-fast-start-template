@@ -123,10 +123,10 @@ const closeFilter = () => {
     <!-- end filters-body -->
     <div class="filters-bottom --mobile">
       <div class="col-2">
-        <button @click="clearFilters()" class="btn btn--second btn--full">Очистить</button>
+        <button class="btn btn--second btn--full" @click="clearFilters()">Очистить</button>
       </div>
       <div class="col-2">
-        <button @click="closeFilter()" class="btn btn--full">Применить</button>
+        <button class="btn btn--full" @click="closeFilter()">Применить</button>
       </div>
     </div>
   </div>

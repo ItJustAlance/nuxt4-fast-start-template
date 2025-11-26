@@ -59,7 +59,7 @@ function addNewTheme() {
               type="text"
               class="input"
               placeholder="Введите название темы"
-            />
+            >
           </div>
           <button class="btn-add" @click="addNewTheme">
             <SvgIcon name="check" class="fnone --stroke ic20" />

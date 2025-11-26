@@ -8,7 +8,7 @@
         <div class="page-error__title h2-title">Упс... страница не найдена</div>
         <div class="page-error__info-block">
           <div v-show="error?.statusCode === 404" class="img">
-            <img src="/img/red/error404.svg" alt="" />
+            <img src="/img/red/error404.svg" alt="" >
           </div>
           <div class="b-btn">
             <NuxtLink class="btn" to="/">На главную</NuxtLink>
@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="page-error__bottom-img">
-        <img src="/img/red/mountains.svg" alt="" />
+        <img src="/img/red/mountains.svg" alt="" >
       </div>
     </div>
   </NuxtLayout>

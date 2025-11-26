@@ -3,7 +3,7 @@
     <div class="footer-nav__title" @click="toggleMenu">
       {{ item.title }}
       <div class="footer-nav__arr">
-        <SvgIcon name="caret-down" class="fnone ic16" :class="{ 'caret-up': isOpen }"></SvgIcon>
+        <SvgIcon name="caret-down" class="fnone ic16" :class="{ 'caret-up': isOpen }"/>
       </div>
     </div>
     <ul class="foot-menu" :class="{ open: isOpen }">

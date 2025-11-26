@@ -149,7 +149,7 @@ function isPosition() {
         </div>
         <div class="text">
           {{ placeholder }}
-          <input v-model="search" type="text" class="input__search" />
+          <input v-model="search" type="text" class="input__search" >
         </div>
         <span class="search-clear" @click="search = ''">
           <SvgIcon name="i-x" title="" />

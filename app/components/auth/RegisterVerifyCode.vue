@@ -17,8 +17,8 @@
               <div class="form-input">
                 <InputOtp v-model="code" :length="6" class="custom-otp-input-wrapper">
                   <template #default="{ attrs, events, index }">
-                    <input type="text" v-bind="attrs" v-on="events" class="custom-otp-input" />
-                    <div class="custom-otp-input-tire" v-if="index === 3">-</div>
+                    <input type="text" v-bind="attrs" class="custom-otp-input" v-on="events" >
+                    <div v-if="index === 3" class="custom-otp-input-tire">-</div>
                   </template>
                 </InputOtp>
               </div>
@@ -36,7 +36,7 @@
               <div class="c-md-1">
                 <div class="login-links">
                   Не пришел код?
-                  <button type="button" @click="resendCode" class="link-link"><strong>Отправить
+                  <button type="button" class="link-link" @click="resendCode"><strong>Отправить
                       повторно</strong></button>
                 </div>
               </div>

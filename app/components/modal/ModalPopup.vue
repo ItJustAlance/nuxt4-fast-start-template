@@ -5,14 +5,14 @@
       class="just-modal fade"
       :class="[{ open: modalStore.isOpenState, in: isShowAnimate }, modalStore.modalClass]"
     >
-      <div class="just-modal__overlay" @click="closeModal"></div>
+      <div class="just-modal__overlay" @click="closeModal"/>
       <div class="just-modal__wrapper">
         <div class="just-modal__container">
           <div class="just-modal__body">
             <!-- Header слот -->
             <div v-if="modalStore.isModalHeaderVisibility" class="modal-search__header">
               <div class="just-modal__header-box">
-                <slot name="header"></slot>
+                <slot name="header"/>
               </div>
             </div>
             <!-- HTML сверху -->
@@ -20,12 +20,12 @@
               <div
                 class="just-modal__header-box"
                 v-html="appUtils.decodeAndSanitizeHtml(modalStore.modalContentUpHtml)"
-              ></div>
+              />
             </div>
             <!-- Слот contentUp -->
             <div v-if="modalStore.isModalContentUp" class="just-modal__content">
               <div class="just-modal__content-wrap">
-                <slot name="contentUp"></slot>
+                <slot name="contentUp"/>
               </div>
             </div>
             <!-- Динамический компонент -->
@@ -38,7 +38,7 @@
             <!-- Слот contentDown -->
             <div v-if="modalStore.isModalContentDown" class="just-modal__content">
               <div class="just-modal__content-wrap">
-                <slot name="contentDown"></slot>
+                <slot name="contentDown"/>
               </div>
             </div>
             <!-- HTML снизу -->
@@ -46,7 +46,7 @@
               <div
                 class="just-modal__content-wrap"
                 v-html="appUtils.decodeAndSanitizeHtml(modalStore.modalContentDownHtml)"
-              ></div>
+              />
             </div>
             <!-- Кнопка закрытия -->
             <div class="just-modal__close-wrapper">

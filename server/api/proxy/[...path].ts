@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
   const method = event.method || 'GET';
 
   // если запрос к дпо 1, то вручную ставим путь
-  let urlPath = `${config.public.realApiUrl}/${path}`;
+  const urlPath = `${config.public.realApiUrl}/${path}`;
 
   // готовим вручную параметры, чтобы сохранить [] не экранированными (нужно для множественного выбора, например, фильтров)
   let urlParams = appUtils.prepareUrlQueryPath(query);

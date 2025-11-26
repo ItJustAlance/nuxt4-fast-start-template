@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia';
 import type { UnwrapNestedRefs } from 'vue';
 import type { TUserData } from '@/types/TAuth';
-import { useOctahedron } from '@/composables/useOctahedron';
 
 export const useAuthStore = defineStore('auth', {
   state: () => ({
@@ -147,16 +146,6 @@ export const useAuthStore = defineStore('auth', {
       const menu = [];
 
       const isAdmin = currentUser.value?.roles?.some((role) => ['admin', 'superadmin'].includes(role));
-
-      const orgDirId = (currentUser.value as any)?.orgDirId ?? null;
-      const { items: octaItems, isLoading: octIsLoading, loadOctahedron } = useOctahedron();
-      let hasOctaForOrg = false;
-      if (orgDirId) {
-        if (process.client && !octaItems.value.length && !octIsLoading.value) {
-          loadOctahedron();
-        }
-        hasOctaForOrg = octaItems.value.some((it) => Number(it.organization?.id) === Number(orgDirId));
-      }
 
       // кабинет слушателя
       if (isAdmin || currentUser.value?.roles?.some((role) => ['user'].includes(role))) {

@@ -97,18 +97,18 @@ const goToFavorites = () => {
     <div v-click-out-side="hide" class="auth-info" :class="{ show: show }">
       <div class="auth-info__label" @click="show = !show">
         <div class="auth-info__label-ico">
-          <img loading="lazy" :src="'/img/red/avatar.svg'" alt="ava" />
+          <img loading="lazy" :src="'/img/red/avatar.svg'" alt="ava" >
         </div>
         <!-- div class="auth-info__label-name">Администратор</div -->
         <div class="auth-info__label-name">{{ userData.auth.firstName }}</div>
 
         <div class="auth-info__label-arr">
-          <SvgIcon name="menu-arr" class="ic16"></SvgIcon>
+          <SvgIcon name="menu-arr" class="ic16"/>
         </div>
       </div>
       <div class="auth-info__dropdown">
         <div class="auth-info__user-info">
-          <div class="ava"><img loading="lazy" :src="'/img/red/avatar.svg'" alt="" /></div>
+          <div class="ava"><img loading="lazy" :src="'/img/red/avatar.svg'" alt="" ></div>
           <div class="right">
             <NuxtLink class="name" to="/personal/profile" @click="hide">
               {{ userData.auth.firstName }} {{ userData.auth.lastName }}
@@ -120,7 +120,7 @@ const goToFavorites = () => {
           <li>
             <NuxtLink class="link-box" to="/personal/notification" @click="hide">
               <span class="link-box__icon">
-                <SvgIcon name="chat-circle" class="fnone ic20"></SvgIcon>
+                <SvgIcon name="chat-circle" class="fnone ic20"/>
               </span>
               <span class="link-box__label">Уведомления</span>
               <span class="num">0</span>
@@ -129,7 +129,7 @@ const goToFavorites = () => {
           <li>
             <NuxtLink class="link-box" to="#" @click="goToFavorites">
               <span class="link-box__icon">
-                <SvgIcon name="heart" class="fnone ic20"></SvgIcon>
+                <SvgIcon name="heart" class="fnone ic20"/>
               </span>
               <span class="link-box__label">Избранное</span>
               <span v-if="userData.favoriteCourses?.size" class="num">{{ userData.favoriteCourses?.size }}</span>
@@ -156,7 +156,7 @@ const goToFavorites = () => {
         <div class="auth-info__bottom">
           <button class="link-box link--red" @click="onLogoutClick">
             <span class="link-box__icon">
-              <SvgIcon name="sign-out" class="fnone ic20"></SvgIcon>
+              <SvgIcon name="sign-out" class="fnone ic20"/>
             </span>
             <div class="link-box__label">Выйти</div>
           </button>

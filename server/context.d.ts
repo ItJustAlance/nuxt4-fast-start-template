@@ -1,4 +1,4 @@
-import { User } from '~/types/types';
+import type { User } from '~/types/types';
 
 declare module 'h3' {
   interface H3EventContext {

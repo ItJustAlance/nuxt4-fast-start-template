@@ -9,7 +9,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   const previous = useState<string | null>('previous-route', () => null);
   const STORAGE_KEY = 'prev:path';
 
-  if (process.client) {
+  if (import.meta.client) {
     const saved = sessionStorage.getItem(STORAGE_KEY);
     if (saved) previous.value = saved;
   }
@@ -17,7 +17,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.$router.afterEach((to, from) => {
     if (to.fullPath !== from.fullPath && from.name) {
       previous.value = from.fullPath;
-      if (process.client) sessionStorage.setItem(STORAGE_KEY, from.fullPath);
+      if (import.meta.client) sessionStorage.setItem(STORAGE_KEY, from.fullPath);
     }
   });
 });

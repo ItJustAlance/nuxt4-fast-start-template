@@ -65,19 +65,19 @@ watch(
     <div class="all">
       <div class="header__lk">
         <div class="header__lk-ico" @click="onLk">
-          <SvgIcon name="user" class="ic42 fnone"></SvgIcon>
+          <SvgIcon name="user" class="ic42 fnone"/>
         </div>
       </div>
       <!--end header__lk -->
       <div class="header__logo">
         <NuxtLink to="/" class="logo-link">
-          <img :src="`/img/${themeDir}/logo-new.svg`" alt="" />
+          <img :src="`/img/${themeDir}/logo-new.svg`" alt="" >
         </NuxtLink>
       </div>
       <nav v-click-out-side="hideDopMenu" class="header__nav">
         <div class="header__nav-ico">
-          <SvgIcon v-show="!(isMenuOpen || isLkOpen)" name="ic-menu" class="ic42" @click="onMenu"></SvgIcon>
-          <SvgIcon v-show="isMenuOpen || isLkOpen" name="menu-close" class="ic42" @click="onClose"></SvgIcon>
+          <SvgIcon v-show="!(isMenuOpen || isLkOpen)" name="ic-menu" class="ic42" @click="onMenu"/>
+          <SvgIcon v-show="isMenuOpen || isLkOpen" name="menu-close" class="ic42" @click="onClose"/>
         </div>
         <ul role="navigation" class="header__nav-menu">
           <li class="nav-menu-item">
@@ -121,7 +121,7 @@ watch(
           <li class="nav-menu-item nav-menu-item__submenu" :class="{ '--open': dopMenuOpen }">
             <div class="nav-menu-item__link --arr" @click="dopMenuOpen = !dopMenuOpen">
               Дополнительно
-              <SvgIcon name="menu-arr" class="ic16"></SvgIcon>
+              <SvgIcon name="menu-arr" class="ic16"/>
             </div>
             <div class="submenu">
               <div class="all">
@@ -131,7 +131,7 @@ watch(
                     <div class="submenu__items">
                       <div class="submenu__item">
                         <NuxtLink :to="{ name: 'programs' }" class="submenu__item-up" @click="onSubmenuLinkClose()">
-                          <span class="submenu__icon"><img src="/img/red/menu-books.svg" alt="" /></span>
+                          <span class="submenu__icon"><img src="/img/red/menu-books.svg" alt="" ></span>
                           <span class="submenu__item-label">Реестр программ</span>
                         </NuxtLink>
                         <div class="submenu__item-bottom">Все актуальные программы ДПО прошедшие экспертизу</div>
@@ -139,7 +139,7 @@ watch(
                       <!--end submenu__item -->
                       <div class="submenu__item">
                         <NuxtLink :to="{ name: 'subjects' }" class="submenu__item-up" @click="onSubmenuLinkClose()">
-                          <span class="submenu__icon"><img src="/img/red/menu-chalkboardTeacher.svg" alt="" /></span>
+                          <span class="submenu__icon"><img src="/img/red/menu-chalkboardTeacher.svg" alt="" ></span>
                           <span class="submenu__item-label">Организации-субъекты ДПО</span>
                         </NuxtLink>
                         <div class="submenu__item-bottom">Организации ДПО размещающие программы на портале ДПО</div>
@@ -147,7 +147,7 @@ watch(
                       <!--end submenu__item -->
                       <div class="submenu__item">
                         <div class="submenu__item-up">
-                          <div class="submenu__icon"><img src="/img/red/menu-and.svg" alt="" /></div>
+                          <div class="submenu__icon"><img src="/img/red/menu-and.svg" alt="" ></div>
                           <NuxtLink to="/profilelevel" class="submenu__item-label" @click="onSubmenuLinkClose()"
                             >Знакомство с порталом</NuxtLink
                           >
@@ -166,7 +166,7 @@ watch(
                       <!--end submenu__item -->
                       <div class="submenu__item">
                         <a href="/expertise" class="submenu__item-up logo-link">
-                          <div class="submenu__icon"><img src="/img/red/menu-ear.svg" alt="" /></div>
+                          <div class="submenu__icon"><img src="/img/red/menu-ear.svg" alt="" ></div>
                           <div class="submenu__item-label">Экспертиза ДПП</div>
                         </a>
                         <div class="submenu__item-bottom">
@@ -176,7 +176,7 @@ watch(
                       <!--end submenu__item -->
                       <div class="submenu__item">
                         <a href="/legalinfo" class="submenu__item-up">
-                          <div class="submenu__icon"><img src="/img/red/menu-briefcase.svg" alt="" /></div>
+                          <div class="submenu__icon"><img src="/img/red/menu-briefcase.svg" alt="" ></div>
                           <div class="submenu__item-label">Правовая информация</div>
                         </a>
                         <div class="submenu__item-bottom">
@@ -192,7 +192,7 @@ watch(
                       <!--end submenu__item -->
                       <div class="submenu__item">
                         <a href="https://www.dpomos.ru/support/" rel="nofollow" target="_blank" class="submenu__item-up">
-                          <div class="submenu__icon"><img src="/img/red/menu-userList.svg" alt="" /></div>
+                          <div class="submenu__icon"><img src="/img/red/menu-userList.svg" alt="" ></div>
                           <div class="submenu__item-label">Поддержка</div>
                         </a>
                         <div class="submenu__item-bottom">Форма связи с технической поддержкой</div>
@@ -206,7 +206,7 @@ watch(
                     <div class="submenu__items">
                       <div class="submenu__item">
                         <a href="https://br.corp-univer.ru/" target="_blank" class="submenu__item-up">
-                          <div class="submenu__icon"><img src="/img/red/menu-books.svg" alt="" /></div>
+                          <div class="submenu__icon"><img src="/img/red/menu-books.svg" alt="" ></div>
                           <div class="submenu__item-label">Банк резюме</div>
                         </a>
                         <div class="submenu__item-bottom">
@@ -216,7 +216,7 @@ watch(
                       <!--end submenu__item -->
                       <div class="submenu__item">
                         <div class="submenu__item-up">
-                          <div class="submenu__icon"><img src="/img/red/menu-ear.svg" alt="" /></div>
+                          <div class="submenu__icon"><img src="/img/red/menu-ear.svg" alt="" ></div>
                           <div class="submenu__item-label">Аттестация</div>
                         </div>
                         <div class="submenu__item-bottom">
@@ -257,7 +257,7 @@ watch(
         <!-- TODO: сделать версию для слабовидящих -->
         <div v-if="false" class="b-view-low-vision">
           <button color="btn-inline">
-            <SvgIcon name="eye" class="ic32"></SvgIcon>
+            <SvgIcon name="eye" class="ic32"/>
           </button>
         </div>
       </div>

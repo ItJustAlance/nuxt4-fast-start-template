@@ -50,7 +50,7 @@ const removeItem = (val) => {
           <div class="text">
             {{ item[optionLabel] }}
           </div>
-          <div class="result-item__delete" v-if="!disabled" @click="removeItem(item[optionValue])">
+          <div v-if="!disabled" class="result-item__delete" @click="removeItem(item[optionValue])">
             <SvgIcon name="i-x" />
           </div>
         </div>

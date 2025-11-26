@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="action-box">
-      <button @click="onDelete" class="btn btn--inline btn-delete">
+      <button class="btn btn--inline btn-delete" @click="onDelete">
         <SvgIcon name="trash" class="fnone ic20" />
       </button>
     </div>

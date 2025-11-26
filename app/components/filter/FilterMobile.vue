@@ -2,7 +2,7 @@
   <div class="filter-mobile__wrapper">
     <div class="filter-mobile__header">
       <div class="filter-close" @click="onClose(false)">
-        <SvgIcon name="menu-close" class="ic42"></SvgIcon>
+        <SvgIcon name="menu-close" class="ic42"/>
       </div>
     </div>
     <div class="filter-mobile__body">
@@ -11,7 +11,7 @@
         <li v-for="item in selectedFiltersGroups" class="search-tag-item">
           <div class="search-tag-item__wrap">
             <div class="search-tag-item__title">{{ item.title }}<strong v-if="item.count > 1"> ({{ item.count }})</strong> <strong v-else>: {{ item.label }}</strong></div>
-            <div @click="onDeleteGroup(item.groupName)" class="search-tag-item__del"><SvgIcon name="xcircle" class="ic12"></SvgIcon></div>
+            <div class="search-tag-item__del" @click="onDeleteGroup(item.groupName)"><SvgIcon name="xcircle" class="ic12"/></div>
           </div>
         </li>
       </ul>

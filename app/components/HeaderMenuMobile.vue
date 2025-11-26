@@ -42,7 +42,7 @@ function onSubmenu() {
       <li class="nav-menu-item nav-menu-item__submenu" :class="{ '--open': isSubmenuOpen }">
         <span class="nav-menu-item__link --arr" @click="onSubmenu">
           Дополнительно
-          <SvgIcon name="menu-arr" class="ic16"></SvgIcon>
+          <SvgIcon name="menu-arr" class="ic16"/>
         </span>
         <div :class="{ open: isSubmenuOpen }" class="submenu">
           <div class="all">
@@ -52,7 +52,7 @@ function onSubmenu() {
                 <div class="submenu__items">
                   <div class="submenu__item">
                     <NuxtLink :to="{ name: 'programs' }" class="submenu__item-up">
-                      <span class="submenu__icon"><img src="/img/red/menu-books.svg" alt="" /></span>
+                      <span class="submenu__icon"><img src="/img/red/menu-books.svg" alt="" ></span>
                       <span class="submenu__item-label">Реестр программ</span>
                     </NuxtLink>
                     <div class="submenu__item-bottom">Все актуальные программы ДПО прошедшие экспертизу</div>
@@ -60,7 +60,7 @@ function onSubmenu() {
                   <!--end submenu__item -->
                   <div class="submenu__item">
                     <NuxtLink :to="{ name: 'subjects' }" class="submenu__item-up">
-                      <span class="submenu__icon"><img src="/img/red/menu-chalkboardTeacher.svg" alt="" /></span>
+                      <span class="submenu__icon"><img src="/img/red/menu-chalkboardTeacher.svg" alt="" ></span>
                       <span class="submenu__item-label">Организации-субъекты ДПО</span>
                     </NuxtLink>
                     <div class="submenu__item-bottom">Организации ДПО размещающие программы на портале ДПО</div>
@@ -68,7 +68,7 @@ function onSubmenu() {
                   <!--end submenu__item -->
                   <div class="submenu__item">
                     <div class="submenu__item-up">
-                      <div class="submenu__icon"><img src="/img/red/menu-and.svg" alt="" /></div>
+                      <div class="submenu__icon"><img src="/img/red/menu-and.svg" alt="" ></div>
                       <NuxtLink to="/profilelevel" class="submenu__item-label">Знакомство с порталом</NuxtLink>
                     </div>
                     <div class="submenu__item-bottom">
@@ -85,7 +85,7 @@ function onSubmenu() {
                   <!--end submenu__item -->
                   <div class="submenu__item">
                     <NuxtLink to="/expertise" class="submenu__item-up">
-                      <div class="submenu__icon"><img src="/img/red/menu-ear.svg" alt="" /></div>
+                      <div class="submenu__icon"><img src="/img/red/menu-ear.svg" alt="" ></div>
                       <div class="submenu__item-label">Экспертиза ДПП</div>
                     </NuxtLink>
                     <div class="submenu__item-bottom">
@@ -95,7 +95,7 @@ function onSubmenu() {
                   <!--end submenu__item -->
                   <div class="submenu__item">
                     <NuxtLink to="/legalinfo" class="submenu__item-up">
-                      <div class="submenu__icon"><img src="/img/red/menu-briefcase.svg" alt="" /></div>
+                      <div class="submenu__icon"><img src="/img/red/menu-briefcase.svg" alt="" ></div>
                       <div class="submenu__item-label">Правовая информация</div>
                     </NuxtLink>
                     <div class="submenu__item-bottom">
@@ -109,7 +109,7 @@ function onSubmenu() {
                   <!--end submenu__item -->
                   <div class="submenu__item">
                     <NuxtLink to="https://www.dpomos.ru/support/" rel="nofollow" target="_blank" class="submenu__item-up">
-                      <div class="submenu__icon"><img src="/img/red/menu-userList.svg" alt="" /></div>
+                      <div class="submenu__icon"><img src="/img/red/menu-userList.svg" alt="" ></div>
                       <div class="submenu__item-label">Поддержка</div>
                     </NuxtLink>
                     <div class="submenu__item-bottom">Форма связи с технической поддержкой</div>
@@ -123,7 +123,7 @@ function onSubmenu() {
                 <div class="submenu__items">
                   <div class="submenu__item">
                     <NuxtLink to="https://br.corp-univer.ru/" target="_blank" class="submenu__item-up">
-                      <div class="submenu__icon"><img src="/img/red/menu-books.svg" alt="" /></div>
+                      <div class="submenu__icon"><img src="/img/red/menu-books.svg" alt="" ></div>
                       <div class="submenu__item-label">Банк резюме</div>
                     </NuxtLink>
                     <div class="submenu__item-bottom">
@@ -133,7 +133,7 @@ function onSubmenu() {
                   <!--end submenu__item -->
                   <div class="submenu__item">
                     <div class="submenu__item-up">
-                      <div class="submenu__icon"><img src="/img/red/menu-ear.svg" alt="" /></div>
+                      <div class="submenu__icon"><img src="/img/red/menu-ear.svg" alt="" ></div>
                       <div class="submenu__item-label">Аттестация</div>
                     </div>
                     <div class="submenu__item-bottom">

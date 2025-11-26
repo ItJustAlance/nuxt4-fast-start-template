@@ -181,7 +181,7 @@ onMounted(() => {
         props.item?.organization?.name
       }}</NuxtLink>
       <div class="course-item__code">
-        <SvgIcon name="barcode" class="fnone ic16"></SvgIcon>
+        <SvgIcon name="barcode" class="fnone ic16"/>
         {{ props.item?.code ? props.item?.code : 'без кода' }}
       </div>
       <h3>
@@ -280,10 +280,10 @@ onMounted(() => {
             title="Убрать из избранного"
             @click="onFavoriteDelete"
           >
-            <SvgIcon name="heart-straight" class="fnone ic24"></SvgIcon>
+            <SvgIcon name="heart-straight" class="fnone ic24"/>
           </button>
           <button v-else class="btn btn--border --btn-favorite" title="Добавить в избранное" @click="onFavoriteAdd">
-            <SvgIcon name="heart-straight" class="fnone ic24"></SvgIcon>
+            <SvgIcon name="heart-straight" class="fnone ic24"/>
           </button>
         </div>
         <!-- если не находитс в вкладке "ждут оплаты" -->

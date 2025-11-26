@@ -254,7 +254,7 @@ export function handleAsyncDataError(errorRef: Ref<any>) {
   const message = err?.message ?? err?.statusMessage ?? 'Server error';
   const data = err?.data ?? null;
 
-  if (process.server) {
+  if (import.meta.server) {
     // при SSR — бросаем, чтобы Nuxt вернул нужный HTTP-код
     throw createError({
       statusCode,

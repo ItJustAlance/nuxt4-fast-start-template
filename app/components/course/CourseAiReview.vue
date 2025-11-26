@@ -19,20 +19,20 @@ const bodyId = computed(() => `${toggleId.value}-body`);
     </header>
 
     <!-- чекбокс с внешним/дефолтным id -->
-    <input type="checkbox" class="ai-toggle" :id="toggleId" :aria-controls="bodyId" />
+    <input :id="toggleId" type="checkbox" class="ai-toggle" :aria-controls="bodyId" >
 
     <div :id="bodyId" class="ai-card__body" role="region">
       <div class="ai-card__inner">
         <!-- Контент -->
-        <div class="ai-card__content" v-html="content"></div>
+        <div class="ai-card__content" v-html="content"/>
         <slot />
       </div>
-      <div class="ai-card__fade" aria-hidden="true"></div>
+      <div class="ai-card__fade" aria-hidden="true"/>
     </div>
     <!-- Футер с кнопкой -->
     <footer class="ai-card__footer">
       <label class="ai-card__btn" :for="toggleId" role="button">
-        <span class="ai-card__btn-icon" aria-hidden="true"></span>
+        <span class="ai-card__btn-icon" aria-hidden="true"/>
         <span class="label-collapsed">Развернуть анализ ИИ</span>
         <span class="label-opened">Свернуть анализ ИИ</span>
       </label>

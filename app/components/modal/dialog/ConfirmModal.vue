@@ -38,7 +38,7 @@ const handleReadMore = async () => {
   <div class="confirm-modal">
     <div class="confirm-modal-content">
       <div class="confirm-modal-content__img">
-        <img src="/img/red/lamp.svg" alt="attention" />
+        <img src="/img/red/lamp.svg" alt="attention" >
       </div>
 
       <h2 class="confirm-modal-content__title">Вы уверены?</h2>

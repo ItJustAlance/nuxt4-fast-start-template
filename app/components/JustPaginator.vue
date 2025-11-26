@@ -2,7 +2,7 @@
   <div class="just-pagination-wrapper">
     <div v-if="totalPages > 1" class="just-pagination">
       <button class="just-pagination__btn" :disabled="currentPage === 1" @click="changePage(currentPage - 1)">
-        <SvgIcon name="arr-left" class="arr-l ic16"></SvgIcon>
+        <SvgIcon name="arr-left" class="arr-l ic16"/>
       </button>
 
       <div class="just-pagination__numbers">
@@ -37,7 +37,7 @@
       </div>
 
       <button class="just-pagination__btn" :disabled="currentPage === totalPages" @click="changePage(currentPage + 1)">
-        <SvgIcon name="arr-left" class="arr-r ic16"></SvgIcon>
+        <SvgIcon name="arr-left" class="arr-r ic16"/>
       </button>
     </div>
     <div v-if="isShowPerview" class="just-pagination__perview">

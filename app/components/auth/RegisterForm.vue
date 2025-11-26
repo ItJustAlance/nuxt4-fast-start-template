@@ -104,7 +104,7 @@ const onSubmit = async (): Promise<void> => {
                 <div class="login__using-btns">
                   <!-- регистрация через портал просто перебрасывает на вход через портал -->
                   <NuxtLink to="/login" class="btn btn--border link-dpomos">
-                    <SvgIcon name="ic-dpomos" class="ic32"></SvgIcon>
+                    <SvgIcon name="ic-dpomos" class="ic32"/>
                     <span class="btn-label">dpomos.ru</span>
                   </NuxtLink>
                   <!--

@@ -52,7 +52,7 @@ function submitForm() {
                 <span class="text">Текущий пароль</span>
               </label>
               <div class="form-input form-input_width">
-                <input v-model="formData.currentPassword" type="password" class="input" />
+                <input v-model="formData.currentPassword" type="password" class="input" >
               </div>
               <div v-if="errors.currentPassword.status" class="error-message">
                 {{ errors.currentPassword.message }}

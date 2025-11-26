@@ -51,7 +51,7 @@ const footerNavData = reactive([
     <div class="all">
       <div style="display: none" class="box-info-banner">
         <div class="box-info-banner__header">
-          <div class="img"><img :src="`/img/${themeDir}/footer-warning.svg`" alt="" /></div>
+          <div class="img"><img :src="`/img/${themeDir}/footer-warning.svg`" alt="" ></div>
           <div class="b-text">Возникли сложности с работой на сайте? Пишите нам</div>
         </div>
 
@@ -70,7 +70,7 @@ const footerNavData = reactive([
             <div style="display: none" class="b-btn-support">
               <NuxtLink to="https://www.dpomos.ru/support/" rel="nofollow" target="_blank" class="btn btn--second">
                 <span class="btn-label">Техническая поддержка</span>
-                <SvgIcon name="ic-support" class="ic-clr ic24"></SvgIcon>
+                <SvgIcon name="ic-support" class="ic-clr ic24"/>
               </NuxtLink>
             </div>
             <!--end b-btn-support -->

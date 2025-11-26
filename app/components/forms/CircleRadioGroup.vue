@@ -34,8 +34,8 @@ const onChange = (val: string | number) => emit('update:modelValue', val);
         :checked="modelValue === opt.value"
         :disabled="disabled"
         @change="onChange(opt.value)"
-      />
-      <span class="crg__control" aria-hidden="true"></span>
+      >
+      <span class="crg__control" aria-hidden="true"/>
       <span class="crg__label">{{ opt.label }}</span>
     </label>
   </div>

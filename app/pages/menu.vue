@@ -69,7 +69,7 @@
         :modal-local-component-params="{}"
       >
         <button class="btn btn--inline">
-          <SvgIcon name="plus-circle" class="fnone ic16"></SvgIcon>
+          <SvgIcon name="plus-circle" class="fnone ic16"/>
           <span class="btn-label">Добавить преподавателя</span>
         </button>
       </ButtonModal>
@@ -80,7 +80,7 @@
         :modal-local-component-params="{}"
       >
         <button class="btn btn--inline">
-          <SvgIcon name="plus-circle" class="fnone ic16"></SvgIcon>
+          <SvgIcon name="plus-circle" class="fnone ic16"/>
           <span class="btn-label">Добавить ответственного</span>
         </button>
       </ButtonModal>
@@ -92,7 +92,7 @@
         :modal-local-component-params="{}"
       >
         <button class="btn btn--inline">
-          <SvgIcon name="plus-circle" class="fnone ic16"></SvgIcon>
+          <SvgIcon name="plus-circle" class="fnone ic16"/>
           <span class="btn-label">Просмотр профиля</span>
         </button>
       </ButtonModal>
@@ -103,7 +103,7 @@
         :modal-local-component-params="{}"
       >
         <button class="btn btn--inline">
-          <SvgIcon name="plus-circle" class="fnone ic16"></SvgIcon>
+          <SvgIcon name="plus-circle" class="fnone ic16"/>
           <span class="btn-label">Причина отчисления</span>
         </button>
       </ButtonModal>
@@ -114,7 +114,7 @@
         :modal-local-component-params="{}"
       >
         <button class="btn btn--inline">
-          <SvgIcon name="plus-circle" class="fnone ic16"></SvgIcon>
+          <SvgIcon name="plus-circle" class="fnone ic16"/>
           <span class="btn-label">Выбрать фильтры</span>
         </button>
       </ButtonModal>
@@ -126,7 +126,7 @@
         :modal-local-component-params="{}"
       >
         <button class="btn btn--inline">
-          <SvgIcon name="plus-circle" class="fnone ic16"></SvgIcon>
+          <SvgIcon name="plus-circle" class="fnone ic16"/>
           <span class="btn-label">Заявка на удаление профиля</span>
         </button>
       </ButtonModal>
@@ -138,7 +138,7 @@
         :modal-local-component-params="{}"
       >
         <button class="btn btn--inline">
-          <SvgIcon name="plus-circle" class="fnone ic16"></SvgIcon>
+          <SvgIcon name="plus-circle" class="fnone ic16"/>
           <span class="btn-label">Оставить отзыв о курсе</span>
         </button>
       </ButtonModal>
@@ -150,7 +150,7 @@
         :modal-local-component-params="{}"
       >
         <button class="btn btn--inline">
-          <SvgIcon name="plus-circle" class="fnone ic16"></SvgIcon>
+          <SvgIcon name="plus-circle" class="fnone ic16"/>
           <span class="btn-label">Запись сотрудников</span>
         </button>
       </ButtonModal>
@@ -162,7 +162,7 @@
         :modal-local-component-params="{}"
       >
         <button class="btn btn--inline">
-          <SvgIcon name="plus-circle" class="fnone ic16"></SvgIcon>
+          <SvgIcon name="plus-circle" class="fnone ic16"/>
           <span class="btn-label">Добавить программу</span>
         </button>
       </ButtonModal>
@@ -174,7 +174,7 @@
         :modal-local-component-params="{}"
       >
         <button class="btn btn--inline">
-          <SvgIcon name="plus-circle" class="fnone ic16"></SvgIcon>
+          <SvgIcon name="plus-circle" class="fnone ic16"/>
           <span class="btn-label">Отклонение заявки</span>
         </button>
       </ButtonModal>
@@ -202,7 +202,7 @@
         }"
       >
         <button class="btn btn--inline">
-          <SvgIcon name="plus-circle" class="fnone ic16"></SvgIcon>
+          <SvgIcon name="plus-circle" class="fnone ic16"/>
           <span class="btn-label">попап с логотипом</span>
         </button>
       </ButtonModal>
@@ -223,7 +223,7 @@
         }"
       >
         <button class="btn btn--inline">
-          <SvgIcon name="plus-circle" class="fnone ic16"></SvgIcon>
+          <SvgIcon name="plus-circle" class="fnone ic16"/>
           <span class="btn-label">Удаление сотрудника</span>
         </button>
       </ButtonModal>

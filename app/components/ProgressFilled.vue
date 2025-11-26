@@ -6,7 +6,7 @@
 <template>
   <div class="progress-filled">
     <div class="progress-filled-progress">
-      <div class="progress-filled-progress__bar" style="width: 30%"></div>
+      <div class="progress-filled-progress__bar" style="width: 30%"/>
     </div>
     <div class="progress-filled__proc">33%</div>
   </div><!--end progress-filled -->
