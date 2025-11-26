@@ -9,21 +9,21 @@ const footerNavData = reactive([
   {
     title: 'Меню',
     items: [
-      { text: 'Курсы', link: '/courses' },
+      { text: 'Курсы', link: '/' },
       { text: 'Мероприятия', link: 'https://www.dpomos.ru/calendar/', nofollow: true, target: '_blank' },
       { text: 'Конкурсы', link: 'https://www.dpomos.ru/cabinet/trainee/my-competitions.php', nofollow: true, target: '_blank' },
-      { text: 'Новости', link: '/news' },
+      { text: 'Новости', link: '/' },
       { text: 'Поддержка', link: 'https://www.dpomos.ru/support/', nofollow: true, target: '_blank' },
     ],
   },
   {
     title: 'На портале',
     items: [
-      { text: 'Реестр программ', link: '/programs' },
-      { text: 'Субъекты портала', link: '/subjects' },
-      { text: 'Знакомство с порталом', link: '/profilelevel' },
-      { text: 'Экспертиза ДПП', link: '/expertise' },
-      { text: 'Правовая информация', link: '/legalinfo' },
+      { text: 'Реестр программ', link: '/' },
+      { text: 'Субъекты портала', link: '/' },
+      { text: 'Знакомство с порталом', link: '/' },
+      { text: 'Экспертиза ДПП', link: '/' },
+      { text: 'Правовая информация', link: '/' },
     ],
   },
   {
@@ -91,8 +91,4 @@ const footerNavData = reactive([
       </div>
     </div>
   </footer>
-  <!--  Только для авторизованных пользователей-->
-  <!--  <JivoButton v-show="currentUser" />-->
-  <!--  Для всех пользователей-->
-  <JivoButton />
 </template>

@@ -1,7 +1,6 @@
 import { computed, type Ref } from 'vue';
 import { useRoute, useRuntimeConfig } from 'nuxt/app';
 import appUtils from '~/utils/appUtils';
-import type { TCourseItem } from '~/types/public/TCourse';
 import { useEntrySeo, type EntrySeoBreadcrumb } from '~/composables/seo/useEntrySeo';
 
 type MaybeRef<T> = T | Ref<T>;
@@ -10,7 +9,7 @@ type UseCourseSeoOptions = {
   breadcrumbs?: MaybeRef<EntrySeoBreadcrumb[] | null | undefined>;
 };
 
-export function useCourseSeo(courseItem: Ref<TCourseItem | null | undefined>, options: UseCourseSeoOptions = {}) {
+export function useCourseSeo(courseItem: Ref<any | null | undefined>, options: UseCourseSeoOptions = {}) {
   const config = useRuntimeConfig();
   const route = useRoute();
 

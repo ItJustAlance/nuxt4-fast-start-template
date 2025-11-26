@@ -81,7 +81,7 @@ watch(
         </div>
         <ul role="navigation" class="header__nav-menu">
           <li class="nav-menu-item">
-            <NuxtLink data-tour="showCourses" :to="{ name: 'courses' }" class="nav-menu-item__link"> Курсы </NuxtLink>
+            <NuxtLink data-tour="showCourses" to="/" class="nav-menu-item__link"> Курсы </NuxtLink>
           </li>
 
           <!-- временно: ссылка на дпомос -->
@@ -107,16 +107,16 @@ watch(
             </NuxtLink>
           </li>
           <li v-if="false" class="nav-menu-item">
-            <NuxtLink data-tour="showEventButton" :to="{ name: 'events' }" class="nav-menu-item__link">
+            <NuxtLink data-tour="showEventButton" to="#" class="nav-menu-item__link">
               Мероприятия
             </NuxtLink>
           </li>
           <li v-if="false" class="nav-menu-item">
-            <NuxtLink :to="{ name: 'competitions' }" class="nav-menu-item__link"> Конкурсы </NuxtLink>
+            <NuxtLink to="#" class="nav-menu-item__link"> Конкурсы </NuxtLink>
           </li>
 
           <li class="nav-menu-item">
-            <NuxtLink :to="{ name: 'news' }" class="nav-menu-item__link"> Новости </NuxtLink>
+            <NuxtLink to="#" class="nav-menu-item__link"> Новости </NuxtLink>
           </li>
           <li class="nav-menu-item nav-menu-item__submenu" :class="{ '--open': dopMenuOpen }">
             <div class="nav-menu-item__link --arr" @click="dopMenuOpen = !dopMenuOpen">
@@ -130,7 +130,7 @@ watch(
                     <div class="submenu__title">НА ПОРТАЛЕ</div>
                     <div class="submenu__items">
                       <div class="submenu__item">
-                        <NuxtLink :to="{ name: 'programs' }" class="submenu__item-up" @click="onSubmenuLinkClose()">
+                        <NuxtLink to="#" class="submenu__item-up" @click="onSubmenuLinkClose()">
                           <span class="submenu__icon"><img src="/img/red/menu-books.svg" alt="" ></span>
                           <span class="submenu__item-label">Реестр программ</span>
                         </NuxtLink>
@@ -138,7 +138,7 @@ watch(
                       </div>
                       <!--end submenu__item -->
                       <div class="submenu__item">
-                        <NuxtLink :to="{ name: 'subjects' }" class="submenu__item-up" @click="onSubmenuLinkClose()">
+                        <NuxtLink to="#" class="submenu__item-up" @click="onSubmenuLinkClose()">
                           <span class="submenu__icon"><img src="/img/red/menu-chalkboardTeacher.svg" alt="" ></span>
                           <span class="submenu__item-label">Организации-субъекты ДПО</span>
                         </NuxtLink>
@@ -148,7 +148,7 @@ watch(
                       <div class="submenu__item">
                         <div class="submenu__item-up">
                           <div class="submenu__icon"><img src="/img/red/menu-and.svg" alt="" ></div>
-                          <NuxtLink to="/profilelevel" class="submenu__item-label" @click="onSubmenuLinkClose()"
+                          <NuxtLink to="/" class="submenu__item-label" @click="onSubmenuLinkClose()"
                             >Знакомство с порталом</NuxtLink
                           >
                         </div>
@@ -156,7 +156,7 @@ watch(
                           <ul class="list-submenu3">
                             <li>Гид по порталу</li>
                             <li>
-                              <NuxtLink to="/faces" @click="onSubmenuLinkClose()">
+                              <NuxtLink to="/" @click="onSubmenuLinkClose()">
                                 Лица портала
                               </NuxtLink>
                             </li>
@@ -165,7 +165,7 @@ watch(
                       </div>
                       <!--end submenu__item -->
                       <div class="submenu__item">
-                        <a href="/expertise" class="submenu__item-up logo-link">
+                        <a href="/" class="submenu__item-up logo-link">
                           <div class="submenu__icon"><img src="/img/red/menu-ear.svg" alt="" ></div>
                           <div class="submenu__item-label">Экспертиза ДПП</div>
                         </a>
@@ -175,7 +175,7 @@ watch(
                       </div>
                       <!--end submenu__item -->
                       <div class="submenu__item">
-                        <a href="/legalinfo" class="submenu__item-up">
+                        <a href="/" class="submenu__item-up">
                           <div class="submenu__icon"><img src="/img/red/menu-briefcase.svg" alt="" ></div>
                           <div class="submenu__item-label">Правовая информация</div>
                         </a>
@@ -252,7 +252,7 @@ watch(
         <div v-else class="b-links-logins">
           <!-- регистрация пока через dpomos -->
           <!-- <a href="/registration" class="btn btn--inline">Регистрация</a> -->
-          <NuxtLink to="/login" class="btn">Войти</NuxtLink>
+          <NuxtLink to="/" class="btn">Войти</NuxtLink>
         </div>
         <!-- TODO: сделать версию для слабовидящих -->
         <div v-if="false" class="b-view-low-vision">

@@ -10,7 +10,7 @@ function onSubmenu() {
   <div class="mobile-menu">
     <ul class="header__nav-menu">
       <li class="nav-menu-item">
-        <NuxtLink :to="{ name: 'courses' }" class="nav-menu-item__link"> Курсы </NuxtLink>
+        <NuxtLink to="/" class="nav-menu-item__link"> Курсы </NuxtLink>
       </li>
 
       <!-- временно: ссылка на дпомос -->
@@ -30,14 +30,14 @@ function onSubmenu() {
         </NuxtLink>
       </li>
       <li v-if="false" class="nav-menu-item">
-        <NuxtLink :to="{ name: 'events' }" class="nav-menu-item__link"> Мероприятия </NuxtLink>
+        <NuxtLink to="#" class="nav-menu-item__link"> Мероприятия </NuxtLink>
       </li>
       <li v-if="false" class="nav-menu-item">
-        <NuxtLink :to="{ name: 'competitions' }" class="nav-menu-item__link"> Конкурсы </NuxtLink>
+        <NuxtLink to="#" class="nav-menu-item__link"> Конкурсы </NuxtLink>
       </li>
 
       <li class="nav-menu-item">
-        <NuxtLink :to="{ name: 'news' }" class="nav-menu-item__link"> Новости </NuxtLink>
+        <NuxtLink to="#" class="nav-menu-item__link"> Новости </NuxtLink>
       </li>
       <li class="nav-menu-item nav-menu-item__submenu" :class="{ '--open': isSubmenuOpen }">
         <span class="nav-menu-item__link --arr" @click="onSubmenu">
@@ -51,7 +51,7 @@ function onSubmenu() {
                 <div class="submenu__title">НА ПОРТАЛЕ</div>
                 <div class="submenu__items">
                   <div class="submenu__item">
-                    <NuxtLink :to="{ name: 'programs' }" class="submenu__item-up">
+                    <NuxtLink to="#" class="submenu__item-up">
                       <span class="submenu__icon"><img src="/img/red/menu-books.svg" alt="" ></span>
                       <span class="submenu__item-label">Реестр программ</span>
                     </NuxtLink>
@@ -59,7 +59,7 @@ function onSubmenu() {
                   </div>
                   <!--end submenu__item -->
                   <div class="submenu__item">
-                    <NuxtLink :to="{ name: 'subjects' }" class="submenu__item-up">
+                    <NuxtLink to="#" class="submenu__item-up">
                       <span class="submenu__icon"><img src="/img/red/menu-chalkboardTeacher.svg" alt="" ></span>
                       <span class="submenu__item-label">Организации-субъекты ДПО</span>
                     </NuxtLink>
@@ -69,13 +69,13 @@ function onSubmenu() {
                   <div class="submenu__item">
                     <div class="submenu__item-up">
                       <div class="submenu__icon"><img src="/img/red/menu-and.svg" alt="" ></div>
-                      <NuxtLink to="/profilelevel" class="submenu__item-label">Знакомство с порталом</NuxtLink>
+                      <NuxtLink to="/" class="submenu__item-label">Знакомство с порталом</NuxtLink>
                     </div>
                     <div class="submenu__item-bottom">
                       <ul class="list-submenu3">
                         <li>Гид по порталу</li>
                         <li>
-                          <NuxtLink to="/faces">
+                          <NuxtLink to="/">
                             Лица портала
                           </NuxtLink>
                         </li>
@@ -84,7 +84,7 @@ function onSubmenu() {
                   </div>
                   <!--end submenu__item -->
                   <div class="submenu__item">
-                    <NuxtLink to="/expertise" class="submenu__item-up">
+                    <NuxtLink to="/" class="submenu__item-up">
                       <div class="submenu__icon"><img src="/img/red/menu-ear.svg" alt="" ></div>
                       <div class="submenu__item-label">Экспертиза ДПП</div>
                     </NuxtLink>
@@ -94,7 +94,7 @@ function onSubmenu() {
                   </div>
                   <!--end submenu__item -->
                   <div class="submenu__item">
-                    <NuxtLink to="/legalinfo" class="submenu__item-up">
+                    <NuxtLink to="/" class="submenu__item-up">
                       <div class="submenu__icon"><img src="/img/red/menu-briefcase.svg" alt="" ></div>
                       <div class="submenu__item-label">Правовая информация</div>
                     </NuxtLink>

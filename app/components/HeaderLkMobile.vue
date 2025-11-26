@@ -36,7 +36,7 @@ const currentUser = useAuthUser();
     <div v-else class="submenu__item">
       <div class="submenu__item-up">
         <div class="submenu__icon"><img src="/img/red/menu-books.svg" alt="" ></div>
-        <NuxtLink to="/login" class="submenu__item-label">Войти</NuxtLink>
+        <NuxtLink to="/" class="submenu__item-label">Войти</NuxtLink>
       </div>
       <div class="submenu__item-bottom">Для зарегистрированных пользователей</div>
     </div>

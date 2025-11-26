@@ -3,9 +3,7 @@ import { ref, onMounted, computed } from 'vue';
 import clickOutSide from '@mahdikhashan/vue3-click-outside';
 import { useAuthUser } from '@/composables/useAuthUser';
 import { useMyApplications } from '~/composables/useMyApplications';
-import { useMyFavoriteCourses } from '~/composables/useMyFavoriteCourses';
 import { useAuthStore } from '~/stores/auth';
-import type { UserData } from '~/types/types';
 
 const vClickOutSide = clickOutSide;
 
@@ -22,16 +20,12 @@ const authUser = useAuthUser();
 const authStore = useAuthStore();
 const { getPersonalMenu, getRoleDescription } = storeToRefs(authStore);
 const { applications, applicationLoadData } = useMyApplications();
-const { favoriteCourses, favoriteCoursesLoadData } = useMyFavoriteCourses();
 
-const userData = computed(
-  (): UserData => ({
-    auth: authUser.value || null, // TODO: проверить, правильно ли это
-    applications: applications.value,
-    favoriteCourses: favoriteCourses.value,
-    personalMenu: getPersonalMenu.value ?? [],
-  }),
-);
+const userData = computed(() => ({
+  auth: authUser.value || null,
+  applications: applications.value,
+  personalMenu: getPersonalMenu.value ?? [],
+}));
 
 const personalMenu = computed(() => {
   const data = userData.value;
@@ -58,8 +52,6 @@ const personalMenu = computed(() => {
 onMounted(() => {
   console.log('onMount auth');
   applicationLoadData(true);
-  favoriteCoursesLoadData(true);
-
   ready.value = true;
 });
 
@@ -81,15 +73,6 @@ const onLogoutClick = async () => {
     user.value.pending = false;
   }
 };
-
-// костыль для избранного, чтобы принудительно обновить страницу при переходе на курсы (иначе route не вызовет повторно onMounted)
-const goToFavorites = () => {
-  hide();
-  navigateTo('/courses?useFavorites=true', {
-    force: true,
-    external: true,
-  });
-};
 </script>
 
 <template>
@@ -110,7 +93,7 @@ const goToFavorites = () => {
         <div class="auth-info__user-info">
           <div class="ava"><img loading="lazy" :src="'/img/red/avatar.svg'" alt="" ></div>
           <div class="right">
-            <NuxtLink class="name" to="/personal/profile" @click="hide">
+            <NuxtLink class="name" to="/" @click="hide">
               {{ userData.auth.firstName }} {{ userData.auth.lastName }}
             </NuxtLink>
             <div class="office">{{ getRoleDescription }}</div>
@@ -118,21 +101,12 @@ const goToFavorites = () => {
         </div>
         <ul class="auth-info__list">
           <li>
-            <NuxtLink class="link-box" to="/personal/notification" @click="hide">
+            <NuxtLink class="link-box" to="/" @click="hide">
               <span class="link-box__icon">
                 <SvgIcon name="chat-circle" class="fnone ic20"/>
               </span>
               <span class="link-box__label">Уведомления</span>
               <span class="num">0</span>
-            </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink class="link-box" to="#" @click="goToFavorites">
-              <span class="link-box__icon">
-                <SvgIcon name="heart" class="fnone ic20"/>
-              </span>
-              <span class="link-box__label">Избранное</span>
-              <span v-if="userData.favoriteCourses?.size" class="num">{{ userData.favoriteCourses?.size }}</span>
             </NuxtLink>
           </li>
         </ul>

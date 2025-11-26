@@ -1,7 +1,7 @@
 import type { Course } from '~/types/types';
 
 // Fake users data
-const courses: Course[] = [
+const courses = [
   {
     id: 1,
     title: 'Основы программирования на Python',

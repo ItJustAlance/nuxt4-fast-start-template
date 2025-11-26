@@ -65,7 +65,7 @@ export const useAuth = () => {
           return authUser;
         }
 
-        const res = await fetchGet(config.public.realApiUrl, '/profile');
+        const res = await fetchGet(config.public.fakeApiUrl, '/profile');
         if (res?.data?.id) {
           console.log('me(): успех, данные о пользователе получены');
           setUser(res.data);

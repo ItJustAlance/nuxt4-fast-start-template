@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
     <div v-show="visible" class="page-loader">
-      <loader-korpik />
+      <div class="page-loader__spinner" />
     </div>
   </transition>
 </template>
@@ -49,6 +49,24 @@ nuxtApp.hook('page:finish', () => {
   justify-content: center;
   background: rgba(255, 255, 255, 0.6);
   z-index: 99;
+}
+
+.page-loader__spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 4px solid rgba(220, 220, 220, 0.8);
+  border-top-color: #e53935;
+  animation: page-loader-spin 0.8s linear infinite;
+}
+
+@keyframes page-loader-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .fade-enter-active,

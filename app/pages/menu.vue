@@ -10,21 +10,21 @@
     <div class="list-pages">
       <ul class="main-list">
         <li><a href="/">главная</a></li>
-        <li><a href="/login">авторизация</a></li>
-        <li><a href="/subjects">субьекты</a></li>
-        <li><a href="/subjects/ds">субьекты подробно</a></li>
-        <li><a id="onBoard-programm" href="/programs">программы</a></li>
-        <li><a href="/programs/da">программа</a></li>
-        <li><a id="onBoard-news" href="/news">новости</a></li>
-        <li><a href="/news/fdsf">новость подробно</a></li>
-        <li><a href="/legalinfo">правовая информация</a></li>
-        <li><a href="/expertise">экспертиза ДПП</a></li>
-        <li><a href="/events">мероприятия</a></li>
-        <li><a href="/events/df">мероприятия подробно</a></li>
-        <li><a id="onBoard-curse" href="/courses">курсы</a></li>
-        <li><a href="/courses/fdsf">курс подробнее</a></li>
-        <li><a href="/competitions">компетенции</a></li>
-        <li><a href="/competitions/dsad">компетенции подробнее</a></li>
+        <li><a href="/">авторизация</a></li>
+        <li><a href="/">субьекты</a></li>
+        <li><a href="/">субьекты подробно</a></li>
+        <li><a id="onBoard-programm" href="/">программы</a></li>
+        <li><a href="/">программа</a></li>
+        <li><a id="onBoard-news" href="/">новости</a></li>
+        <li><a href="/">новость подробно</a></li>
+        <li><a href="/">правовая информация</a></li>
+        <li><a href="/">экспертиза ДПП</a></li>
+        <li><a href="/">мероприятия</a></li>
+        <li><a href="/">мероприятия подробно</a></li>
+        <li><a id="onBoard-curse" href="/">курсы</a></li>
+        <li><a href="/">курс подробнее</a></li>
+        <li><a href="/">компетенции</a></li>
+        <li><a href="/">компетенции подробнее</a></li>
         <li><h3>Личный кабинет</h3></li>
         <li><a href="/personal/profile?auth=false">Профиль</a></li>
         <li><a href="/personal/notification?auth=false">Уведомления</a></li>

@@ -152,7 +152,7 @@ export const useAuthStore = defineStore('auth', {
         menu.push({
           groupCode: 'lkUser',
           groupTitle: 'Кабинет слушателя',
-          defaultLink: '/personal/profile',
+          defaultLink: '/',
           items: [
             {
               id: 10,
@@ -160,7 +160,7 @@ export const useAuthStore = defineStore('auth', {
               name: 'lkUserProfile',
               title: 'Персональные данные',
               iconName: 'books',
-              link: '/personal/profile',
+              link: '/',
             },
             {
               id: 20,
@@ -168,7 +168,7 @@ export const useAuthStore = defineStore('auth', {
               name: 'lkUserCourses',
               title: 'Мои курсы',
               iconName: 'books',
-              link: '/personal/courses',
+              link: '/',
             },
             {
               id: 30,
@@ -176,7 +176,7 @@ export const useAuthStore = defineStore('auth', {
               name: 'lkUserEduDocs',
               title: 'Зачетная книжка',
               iconName: 'books',
-              link: '/personal/eduDocs',
+              link: '/',
             },
             {
               id: 40,
@@ -184,7 +184,7 @@ export const useAuthStore = defineStore('auth', {
               name: 'lkUserDocs',
               title: 'Мои документы',
               iconName: 'link',
-              link: '/redirectToDpo1?target=lk-personal-docs',
+              link: '/',
             }, // дпо 1
             // { id: 41, name: 'events2', title: 'Мои мероприятия', iconName: 'calendar', link: '' }, // дпо 2
             {
@@ -193,7 +193,7 @@ export const useAuthStore = defineStore('auth', {
               name: 'lkUserEvents',
               title: 'Мои мероприятия',
               iconName: 'link',
-              link: '/redirectToDpo1?target=lk-events',
+              link: '/',
             }, // дпо 1
             {
               id: 50,
@@ -201,7 +201,7 @@ export const useAuthStore = defineStore('auth', {
               name: 'lkUserCompetitions',
               title: 'Мои конкурсы',
               iconName: 'link',
-              link: '/redirectToDpo1?target=lk-competitions',
+              link: '/',
             }, // дпо 1
             {
               id: 60,
@@ -228,18 +228,18 @@ export const useAuthStore = defineStore('auth', {
         menu.push({
           groupCode: 'lkProvide',
           groupTitle: 'Кабинет поставщика',
-          defaultLink: '/provide',
+          defaultLink: '/',
           items: [
-            { id: 4, enabled: false, title: 'Профиль организации', iconName: 'briefcase', link: '/provide' },
+            { id: 4, enabled: false, title: 'Профиль организации', iconName: 'briefcase', link: '/' },
             {
               id: 5,
               enabled: false,
               title: 'Статистика организации',
               iconName: 'chart-bar',
-              link: '/provide/courseEdit/34',
+              link: '/',
             },
-            { id: 6, enabled: true, title: 'Курсы', iconName: 'books', link: '/provide/courses' },
-            { id: 7, enabled: false, title: 'Программы', iconName: 'file', link: '/provide/programm' },
+            { id: 6, enabled: true, title: 'Курсы', iconName: 'books', link: '/' },
+            { id: 7, enabled: false, title: 'Программы', iconName: 'file', link: '/' },
             { id: 8, enabled: false, title: 'Группы', iconName: 'users-four', link: '' },
           ],
         });
@@ -250,17 +250,17 @@ export const useAuthStore = defineStore('auth', {
         menu.push({
           groupCode: 'lkAccountant',
           groupTitle: 'Кабинет бухгалтера',
-          defaultLink: '/accountant',
+          defaultLink: '/',
           items: [
-            { id: 9, enabled: false, title: 'Профиль бухгалтера', iconName: 'briefcase', link: '/accountant' },
-            { id: 10, enabled: false, title: 'Договоры', iconName: 'contract', link: '/accountant/contract' },
-            { id: 11, enabled: false, title: 'Группы', iconName: 'users-four', link: '/provide/groups' },
+            { id: 9, enabled: false, title: 'Профиль бухгалтера', iconName: 'briefcase', link: '/' },
+            { id: 10, enabled: false, title: 'Договоры', iconName: 'contract', link: '/' },
+            { id: 11, enabled: false, title: 'Группы', iconName: 'users-four', link: '/' },
             {
               id: 12,
               enabled: false,
               title: 'Импорт платежей',
               iconName: 'wallet',
-              link: '/accountant/importPayments',
+              link: '/',
             },
           ],
         });
@@ -268,28 +268,28 @@ export const useAuthStore = defineStore('auth', {
 
       // кабинет директора
       const isRealDirector = currentUser.value?.organization?.headId === currentUser.value?.id;
-      const isDirectorOcta = hasOctaForOrg;
+      
 
       if (isAdmin || (isRealDirector && currentUser.value?.roles?.some((role) => ['director'].includes(role)))) {
         menu.push({
           groupCode: 'lkDirector',
           groupTitle: 'Кабинет директора',
-          defaultLink: '/director/employees',
+          defaultLink: '/',
           items: [
-            { id: 13, enabled: true, title: 'Сотрудники', iconName: 'briefcase', link: '/director/employees' },
+            { id: 13, enabled: true, title: 'Сотрудники', iconName: 'briefcase', link: '/' },
             {
               id: 14,
               enabled: true,
               title: 'Согласование заявок',
               iconName: 'contract',
-              link: '/director/educations',
+              link: '/',
             },
             {
               id: 15,
               enabled: true,
               title: 'Назначения',
               iconName: 'contract',
-              link: '/director/appointments',
+              link: '/',
               isHidden: true,
             },
             {
@@ -297,8 +297,8 @@ export const useAuthStore = defineStore('auth', {
               enabled: true,
               title: 'Управленческий октаэдр',
               iconName: 'contract',
-              link: '/director/octahedron',
-              isHidden: !isDirectorOcta,
+              link: '/',
+              isHidden: true,
             },
           ],
         });
@@ -309,10 +309,10 @@ export const useAuthStore = defineStore('auth', {
         menu.push({
           groupCode: 'lkExpert',
           groupTitle: 'Кабинет эксперта',
-          defaultLink: '/expert',
+          defaultLink: '/',
           items: [
-            { id: 17, enabled: false, title: 'Управление программами', iconName: 'briefcase', link: '/expert' },
-            { id: 18, enabled: false, title: 'Организации', iconName: 'contract', link: '/expert/organizations' },
+            { id: 17, enabled: false, title: 'Управление программами', iconName: 'briefcase', link: '/' },
+            { id: 18, enabled: false, title: 'Организации', iconName: 'contract', link: '/' },
           ],
         });
       }
@@ -321,9 +321,9 @@ export const useAuthStore = defineStore('auth', {
         menu.push({
           groupCode: 'lkOkt',
           groupTitle: 'Октаэдр-менеджер',
-          defaultLink: '/octahedron',
+          defaultLink: '/',
           items: [
-            { id: 19, enabled: false, title: 'Управление октаэдрами', iconName: 'briefcase', link: '/octahedron' },
+            { id: 19, enabled: false, title: 'Управление октаэдрами', iconName: 'briefcase', link: '/' },
           ],
         });
       }
@@ -341,7 +341,7 @@ export const useAuthStore = defineStore('auth', {
               enabled: true,
               title: 'Перейти на dpomos.ru',
               iconName: 'link',
-              link: '/redirectToDpo1?target=lk',
+              link: '/',
             },
           ],
         });

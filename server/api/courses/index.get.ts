@@ -1,10 +1,11 @@
 import { getCourses } from '#server/models/courses';
 
 export default defineEventHandler(async (event) => {
-  const body = await readBody(event); // Получаем тело запроса
-  console.log('getCourses body', body)
-  const page = body.page ? parseInt(body.page) : 1;
-  const perPage = body.perPage ? parseInt(body.perPage) : 5;
+  const query = getQuery(event); // Получаем query параметры для GET запроса
+  console.log('getCourses query', query);
+  const page = query.page ? parseInt(query.page as string) : 1;
+  const limit = query.limit ? parseInt(query.limit as string) : 100;
+  const perPage = query.perPage ? parseInt(query.perPage as string) : limit;
 
   const { data, total } = getCourses(page, perPage);
 

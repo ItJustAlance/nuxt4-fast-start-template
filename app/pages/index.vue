@@ -1,6 +1,9 @@
 <script lang="ts" setup>
-
+import { storeToRefs } from 'pinia';
+import { useFiltersStore } from '~/stores/filters';
 import { useEntrySeo } from '~/composables/seo/useEntrySeo';
+import {fetchGet} from "@/utils/fetchUtils";
+
 
 const route = useRoute();
 // const id = route.params.course;
@@ -79,7 +82,91 @@ const sliderTeach = reactive({
     },
   ],
 });
+
+
+
+const selectedCity = ref(null);
+const courseList = ref([]);
+const filterPopular = ref(false);
+const filterNew = ref(false);
+
+const cities = ref([
+  { name: 'New York', code: 'NY' },
+  { name: 'Rome', code: 'RM' },
+  { name: 'London', code: 'LDN' },
+  { name: 'Istanbul', code: 'IST' },
+  { name: 'Paris', code: 'PRS' },
+]);
+
+// Пагинация
+const currentPage = ref(1);
+const itemsPerPage = ref(6); // Начальный лимит, но можно переопределить из ответа сервера
+const totalCourses = ref(0); // Будет обновляться при первом запросе
+
+// Стор фильтров
+const filtersStore = useFiltersStore();
+const { initFilterData, showFilters } = storeToRefs(filtersStore);
+
+// Функция запроса мероприятий
+const fetchEvents = async (page = 1, limit = itemsPerPage.value) => {
+  try {
+    const config = useRuntimeConfig();
+    const response = await fetchGet(config.public.fakeApiUrl, '/courses', {page: 1, limit: 100}, false);
+
+    if (!response || !Array.isArray(response.data)) {
+      throw new Error('API вернул некорректные данные');
+    }
+
+    // Обновляем общее количество мероприятий и лимит, если они приходят в ответе
+    totalCourses.value = response.total || totalCourses.value;
+    itemsPerPage.value = response.limit || itemsPerPage.value;
+
+    console.log(`Загружена страница ${response.page} из ${Math.ceil(totalCourses.value / itemsPerPage.value)}`);
+
+    return response.data;
+  } catch (error) {
+    console.error('Ошибка запроса:', error);
+    return [];
+  }
+};
+
+onMounted(async () => {
+  courseList.value = await fetchEvents();
+  await onFilterData();
+});
+
+// Инициализация фильтров
+const onFilterData = async () => {
+  const result = await filtersStore.initFilters();
+  console.log('onFilterData', result);
+
+  if (result === 'success') {
+    filtersStore.onInitFilter(true);
+  }
+};
+
+// Переключение видимости фильтров
+const onFilterShow = (value: boolean) => {
+  filtersStore.onShowFilter(value);
+};
+
+// Функция подгрузки дополнительных мероприятий
+const onCoursesMore = async () => {
+  if (!hasMoreCourses.value) return; // Если данных больше нет, не загружаем
+
+  currentPage.value += 1;
+  const moreCourses = await fetchEvents(currentPage.value);
+
+  courseList.value = [...courseList.value, ...moreCourses];
+};
+
+// Проверяем, есть ли еще мероприятия для загрузки
+const hasMoreCourses = computed(() => {
+  return courseList.value.length < totalCourses.value;
+});
+
 </script>
+
 
 <template>
   <div class="all">
@@ -96,303 +183,108 @@ const sliderTeach = reactive({
       </template>
       <template #separator> <span class="f-700">/</span> </template>
     </Breadcrumb>
+    <div class="page-title h2-title">Курсы для вас </div>
+    <pre>{{ initFilterData }}</pre>
     <div class="b-container">
+      <aside class="aside hidden-lg">
+        <FilterComp v-if="initFilterData" />
+      </aside>
       <main class="content-body">
-        <section class="section section-event-info">
-          <div class="event-header">
+        
+        
+        <section class="section">
+          <ul class="search-list-tags filter-active-list">
+            <li class="search-tag-item" v-for="(tag, index) in ['Воспитатель', 'Стоимость: 120р –120 000р', 'Длительность: 168-320 часов']" :key="index">
+              <div class="search-tag-item__wrap">
+                <div class="search-tag-item__title">{{ tag }}</div>
+                <div class="search-tag-item__del">
+                  <SvgIcon name="xcircle" class="ic12"></SvgIcon>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+        
+        <section class="section">
+          <div class="b-row-center --align-center">
+            <button class="btn btn--second">
+              <span class="btn-label">Сбросить все фильтры</span>
+              <SvgIcon name="xcircle" class="fnone ic24"></SvgIcon>
+            </button>
+          </div>
+        </section>
+        
+        <section class="section">
+          <div v-if="courseList.length === 0" class="search-no-result">
             <div class="img">
-              <NuxtImg
-                src="/img/red/big-event.png"
-                alt=""
-                format="webp"
-                quality="80"
-                loading="lazy"
-                sizes="sm:260px lg:300px"
-                :placeholder="[50, 75]"
-              />
+              <img src="/img/red/file_searching.svg" alt="Поиск" />
             </div>
-            <div class="event-info">
-              <div class="tag-name">
-                <div class="mini-info --blue">
-                  <div class="mini-info__ico">
-                    <SvgIcon name="bookmarks" class="fnone ic16"></SvgIcon>
-                  </div>
-                  <div class="mini-info__text">Университетская среда для учителей</div>
-                </div>
-              </div>
-              <h1 class="h1-title">
-                Образование Древнерусского государства и формирование его территорий в IX - н. XII вв.
-              </h1>
-              <div class="img --img-mobile">
-                <NuxtImg
-                  src="/img/red/big-event.png"
-                  alt=""
-                  format="webp"
-                  quality="80"
-                  loading="lazy"
-                  sizes="sm:100vw md:50vw lg:600px"
-                  :placeholder="[50, 25, 75]"
-                />
-              </div>
-              <div class="course-info__about">
-                <div class="b-item">
-                  <div class="b-label">ДАТА</div>
-                  <div class="b-text">
-                    <div class="b-icon">
-                      <SvgIcon name="calendar-check" class="fnone ic12" />
-                    </div>
-                    
-                    4 октября 2023, 18:00
-                  </div>
-                </div>
-                <div class="b-item">
-                  <div class="b-label">ФОРМА</div>
-                  <div class="b-text">
-                    <div class="b-icon">
-                      <SvgIcon name="ic-monitor" class="fnone ic12" />
-                    </div>
-                    
-                    Очно
-                  </div>
-                </div>
-                <div class="b-item">
-                  <div class="b-label">АДРЕС</div>
-                  <div class="b-text">
-                    <div class="b-icon">
-                      <img src="/img/red/mapPin.svg" alt="" />
-                    </div>
-                    пр. Пушкина 27
-                  </div>
-                </div>
-                <div class="b-item">
-                  <div class="b-label">МЕСТА</div>
-                  <div class="b-text">
-                    <div class="b-icon">
-                      <img src="/img/red/users.png" alt="" />
-                    </div>
-                    свободно 26 из 75
-                  </div>
-                </div>
-              </div>
-              <!--end course-info__about-->
-              <div class="event-info-bottom">
-                <div class="price">2300р</div>
-                <div class="b-btn"><button class="btn btn--md-full">Записаться</button></div>
-              </div>
-            </div>
-            <!--end event-info -->
-          </div>
-          <!--end event-header -->
-        </section>
-        
-        <section class="section-big">
-          <div class="course-nav-box">
-            <article class="course-nav__text article">
-              <p>
-                Курс направлен на совершенствование профессиональных компетенций обучающихся в области изучения основ
-                трёхмерного моделирования и печати для использования в образовательном процессе. В программу входят
-                следующие разделы:
-              </p>
-              <p>
-                Курс направлен на совершенствование профессиональных компетенций обучающихся в области изучения основ
-                трёхмерного моделирования и печати для использования в образовательном процессе. В программу входят
-                следующие разделы:
-              </p>
-              <p>В программу входят следующие разделы:</p>
-              <ol>
-                <li>Моделирование конструкций с использованием технологии SnapCad.</li>
-                <li>
-                  Знакомство с современными научными знаниями по созданию деталей и сборок в среде моделирования
-                  Autodesk Inventor
-                </li>
-                <li>Создание сборки в программе Autodesk Inventor</li>
-                <li>Настройка вывода трёхмерных объектов в формат для трёхмерной печати</li>
-              </ol>
-              <p>
-                Итоговая аттестация – зачет на основании совокупности выполненных работ, результатов тестирования и
-                итоговой практической работы.
-              </p>
-            </article>
-            <div class="course-nav__menu">
-              <div class="course-nav__menu-box">
-                <div class="title">Для кого мероприятие</div>
-                <ul class="course-nav__list">
-                  <li class="course-nav__list-item">
-                    <span class="course-nav__list-item-wrap">Учитель физики</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="course-nav__menu-box">
-                <div class="title">Продолжительность</div>
-                <ul class="course-nav__list">
-                  <li class="course-nav__list-item">
-                    <span class="course-nav__list-item-wrap">2 часа</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!--end course-nav -->
-        </section>
-        <section class="section-big">
-          <div class="docs-list --cols3">
-            <div class="item-doc">
-              <NuxtLink href="#" class="item-doc__wrapper">
-                <span class="b-icon"><SvgIcon name="file-pdf" class="fnone ic24"></SvgIcon></span>
-                <span class="b-name">Инструкция по размещению программ на Портале ДПО</span>
-              </NuxtLink>
-            </div>
-            <!--end item-doc -->
-            <div class="item-doc">
-              <NuxtLink href="#" class="item-doc__wrapper">
-                <span class="b-icon"><SvgIcon name="file-pdf" class="fnone ic24"></SvgIcon></span>
-                <span class="b-name">Инструкция по размещению программ на Портале ДПО</span>
-              </NuxtLink>
-            </div>
-            <!--end item-doc -->
-            <div class="item-doc">
-              <NuxtLink href="#" class="item-doc__wrapper">
-                <span class="b-icon"><SvgIcon name="file-doc" class="fnone ic24"></SvgIcon></span>
-                <span class="b-name">Инструкция по размещению программ на Портале ДПО</span>
-              </NuxtLink>
-            </div>
-            <!--end item-doc -->
-          </div>
-        </section>
-        <section class="section-big">
-          <h2 class="h2-title section-title">Спикеры</h2>
-          <Carousel
-            class="slider-teacher"
-            :value="sliderTeach.data"
-            :num-visible="4"
-            :num-scroll="1"
-            :show-indicators="false"
-            circular
-            :responsive-options="sliderTeach.options"
-          >
-            <template #item="slotProps">
-              <div class="slide-teach">
-                <div class="img">
-                  <img loading="lazy" :src="slotProps.data.url" :alt="slotProps.data.id" class="w-full rounded" />
-                </div>
-                <div class="title">{{ slotProps.data.title }}</div>
-                <div class="text">{{ slotProps.data.text }}</div>
-              </div>
-            </template>
-            <template #previcon>
-              <SvgIcon name="ic-arrow-circle-left" class="fnone ic48"></SvgIcon>
-            </template>
-            <template #nexticon>
-              <SvgIcon name="ic-arrow-circle-right" class="fnone ic48"></SvgIcon>
-            </template>
-          </Carousel>
-        </section>
-        
-        <section class="section-big">
-          <h2 class="h2-title section-title">Программа мероприятия</h2>
-          <div class="course-program-list">
-            <div class="b-item">
-              <div class="b-item__wrapper">
-                <div class="num">01</div>
-                <div class="text">
-                  Моделирование конструкций с использованием технологии SnapCad Моделирование конструкций с
-                  использованием технологии SnapCad
-                </div>
-              </div>
-            </div>
-            <div class="b-item">
-              <div class="b-item__wrapper">
-                <div class="num">02</div>
-                <div class="text">
-                  Знакомство с современными научными знаниями по созданию деталей и сборок в среде моделирования
-                  Autodesk Inventor
-                </div>
-              </div>
-            </div>
-            <div class="b-item">
-              <div class="b-item__wrapper">
-                <div class="num">03</div>
-                <div class="text">Создание сборки в программе Autodesk Inventor</div>
-              </div>
-            </div>
-            <div class="b-item">
-              <div class="b-item__wrapper">
-                <div class="num">04</div>
-                <div class="text">Настройка вывода трёхмерных объектов в формат для трёхмерной печати</div>
-              </div>
-            </div>
-            <div class="b-item">
-              <div class="b-item__wrapper">
-                <div class="num">05</div>
-                <div class="text">Обучение 3 D моделированию и печати</div>
-              </div>
-            </div>
-            <div class="b-item">
-              <div class="b-item__wrapper">
-                <div class="num">06</div>
-                <div class="text">Итоговая аттестация</div>
-              </div>
+            <div class="text h5-title">
+              По вашим параметрам поиска курсов не найдено. Попробуйте изменить фильтры
             </div>
           </div>
         </section>
         
-        <section class="section-big --last">
-          <h2 class="h2-title section-title">Организатор</h2>
-          <div class="course-organizator-info">
-            <div class="b-info">
-              <div class="card-org">
-                <div class="img"><img src="/img/red/org-img.png" alt="" /></div>
-                <div class="text">ФГАОУ ВО «Национальный исследовательский технологический университет «МИСиС»</div>
+        <div v-if="courseList.length > 0" class="result-content">
+          <div class="result-content__header">
+            <div class="result-filters">
+              <div class="result-filters__item --select">
+                <Select
+                  v-model="selectedCity"
+                  :options="cities"
+                  option-label="name"
+                  placeholder="Выберите город"
+                  class="select-filter-sort"
+                >
+                  <template #dropdownicon>
+                    <SvgIcon name="caret-down" class="fnone ic24"></SvgIcon>
+                  </template>
+                </Select>
               </div>
-              <div class="course-info__about">
-                <div class="b-item">
-                  <div class="b-label">ТАТУНОВ ЮРИЙ ЮРЬЕВИЧ</div>
-                  <div class="b-text">
-                    <div class="text-row">
-                      <div class="col-md-50 col-xs-100">
-                        <div class="b-icon">
-                          <img src="/img/red/phone.svg" alt="" />
-                        </div>
-                        +7(495)114-56-28
-                      </div>
-                      <div class="col-md-50 col-xs-100">
-                        <div class="b-icon">
-                          <img src="/img/red/email.svg" alt="" />
-                        </div>
-                        +7(495)114-56-28
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="b-item">
-                  <div class="b-label">АРБИЕВ РУСЛАН МУСЛИМОВИЧ</div>
-                  <div class="b-text">
-                    <div class="text-row">
-                      <div class="col-md-50 col-xs-100">
-                        <div class="b-icon">
-                          <img src="/img/red/phone.svg" alt="" />
-                        </div>
-                        +7(495)114-56-28
-                      </div>
-                      <div class="col-md-50 col-xs-100">
-                        <div class="b-icon">
-                          <img src="/img/red/email.svg" alt="" />
-                        </div>
-                        +7(495)114-56-28
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              
+              <div class="result-filters__item visible-lg">
+                <button class="btn-filter btn-filter-show" @click="onFilterShow(true)">
+                  <SvgIcon name="faders-horizontal" class="fnone ic24"></SvgIcon>
+                </button>
               </div>
-              <!--end course-info__about-->
             </div>
-            <div class="b-img">
-              <img src="/img/red/teaching.png" alt="" />
+            
+            <div class="filter-list-first">
+              <div class="b-checkbox">
+                <Checkbox v-model="filterPopular" :binary="true" input-id="popular" />
+                <label for="popular">Популярные</label>
+              </div>
+              <div class="b-checkbox">
+                <Checkbox v-model="filterNew" :binary="true" input-id="filterNew" />
+                <label for="filterNew">Новые</label>
+              </div>
             </div>
           </div>
-          <!--end course-organizator-info -->
-        </section>
+          
+          <div class="result-content__body">
+            <div class="popular-list">
+              <div class="popular-item" v-for="(course, index) in courseList" :key="index">
+                <CourseBox :item="course" />
+              </div>
+            </div>
+            
+            <div  v-if="hasMoreCourses" class="more-load --align-center">
+              <button @click="onCoursesMore" class="btn btn--second">
+                <span class="btn-label">Еще 6 курсов из {{ totalCourses }}</span>
+                <SvgIcon name="caret-circle-down" class="fnone ic24"></SvgIcon>
+              </button>
+            </div>
+          </div>
+        </div>
       </main>
+    </div>
+    
+    <div v-if="showFilters" class="filter-mobile">
+      <FilterMobile v-if="initFilterData" />
+    </div>
+    
+    <div class="filter-mobile --single">
+      <!-- FilterMobileFull v-if="initFilterData" / -->
     </div>
   </div>
 </template>
