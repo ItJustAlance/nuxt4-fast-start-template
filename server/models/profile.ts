@@ -8,7 +8,7 @@ const profile = {
       "middleName": "Портала",
       "snils": "111-111-111 11",
       "email": "dpomos@corp-univer.ru",
-      "phone": "8(926)9149747",
+      "phone": "8(926)91111747",
       "sex": "male",
       "qualificationCategory": "Первая",
       "avatar": "/users/default.png",
@@ -37,7 +37,7 @@ const profile = {
         "organization.show.own"
       ],
       "orgDirId": 788,
-      "orgDirUuid": "dfe9c7f1-b74e-461a-a18a-3599493774d3",
+      "orgDirUuid": "dfe9c7f1-b74e-461a-a9493774d3",
       "organization": {
         "id": 216,
         "name": "временно не работаю",
